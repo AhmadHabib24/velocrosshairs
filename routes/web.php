@@ -73,9 +73,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/crosshair/submit', [UserDashboardController::class, 'store'])->name('user.crosshair.store');
 });
 
-Route::get('/download', function () {
-    return view('user.download.index');
-})->name('download');
 
 Auth::routes();
 

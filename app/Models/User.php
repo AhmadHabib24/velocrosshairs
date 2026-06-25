@@ -180,7 +180,7 @@ class User extends Authenticatable
                     "A new user '{$user->name}' has registered on the platform.",
                     [
                         'user_id' => $user->id,
-                        'link' => route('admin.users.show', $user->id), // Adjust route as needed
+                        'link' => route('admin.users.index'), // Adjust route as needed
                     ]
                 );
             });

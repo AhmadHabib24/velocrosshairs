@@ -492,6 +492,55 @@
                 padding: 1rem;
             }
         }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .page-item .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .page-item .page-link i {
+            font-size: 14px;
+            width: auto;
+            margin: 0;
+        }
+
+        .page-item.active .page-link {
+            background: var(--primary-pink);
+            color: #fff;
+            border-color: var(--primary-pink);
+            box-shadow: var(--glow-pink);
+        }
+
+        .page-item:not(.active):not(.disabled) .page-link:hover {
+            border-color: var(--primary-pink);
+            color: var(--primary-pink);
+        }
+
+        .page-item.disabled .page-link {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--dark-bg);
+        }
     </style>
     @stack('styles')
 </head>

@@ -7,6 +7,9 @@ use App\Models\Category;
 use App\Models\CrossChair;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CrosshairSubmittedMail;
+use App\Models\Notification;
 
 class UserDashboardController extends Controller
 {
@@ -213,6 +216,25 @@ class UserDashboardController extends Controller
                 'meta_description' => $metaDescription,
                 'meta_keywords' => $metaKeywords,
             ]);
+
+            // Send email to admin
+            $adminEmail = env('ADMIN_EMAIL');
+            $adminUrl = route('admin.CrossChair.index'); // Link to admin crosshairs page
+
+            if ($adminEmail) {
+                Mail::to($adminEmail)->send(new CrosshairSubmittedMail($crosshair, $user, $adminUrl));
+            }
+
+            // Create notification for admin
+            Notification::createNotification(
+                'new_crosshair',
+                'New Crosshair Submitted',
+                "User '{$user->name}' has submitted a new crosshair '{$crosshair->name}' for review.",
+                [
+                    'crosshair_id' => $crosshair->id,
+                    'link' => $adminUrl,
+                ]
+            );
 
             return redirect()->route('user.dashboard')
                 ->with('success', 'Crosshair submitted successfully! It will be reviewed by our team.');

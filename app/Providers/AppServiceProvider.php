@@ -23,8 +23,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::composer('*', function ($view) {
-        $categories = Category::where('is_active', true)->orderBy('name')->get();
-        $view->with('navCategories', $categories);
-    });
+            $categories = Category::where('is_active', true)->orderBy('name')->get();
+            $view->with('navCategories', $categories);
+        });
+
+        \Illuminate\Pagination\Paginator::defaultView('vendor.pagination.custom');
     }
 }

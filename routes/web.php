@@ -73,6 +73,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/crosshair/submit', [UserDashboardController::class, 'store'])->name('user.crosshair.store');
 });
 
+// Redirect old download route to crosshairs
+Route::redirect('/download', '/crosshairs', 301);
 
 Auth::routes();
 
@@ -92,6 +94,10 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(fun
     Route::get('/notifications/unread', [NotificationController::class, 'getUnread'])->name('notifications.unread');
     Route::post('/notifications/{id}/read', [NotificationController::class, 'markAsRead'])->name('notifications.read');
     Route::post('/notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('notifications.readAll');
+
+    Route::get('/emails/unread', [App\Http\Controllers\Admin\EmailLogController::class, 'unread'])->name('emails.unread');
+    Route::get('/emails/{id}', [App\Http\Controllers\Admin\EmailLogController::class, 'show'])->name('emails.show');
+    Route::post('/emails/read-all', [App\Http\Controllers\Admin\EmailLogController::class, 'readAll'])->name('emails.readAll');
 
     // User Management Routes
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

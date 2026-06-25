@@ -780,7 +780,7 @@
                             </div>
 
                             <div class="crosshair-info">
-                                <h4 class="crosshair-name">{{ $crosshair->name }}</h4>
+                                <h3 class="crosshair-name">{{ $crosshair->name }}</h3>
 
                                 <div class="crosshair-meta">
                                     @if($crosshair->author)
@@ -911,7 +911,7 @@
                     <div class="color-icon" style="background: linear-gradient(135deg, #00ffff 0%, #00cccc 100%);">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h4>Cyan</h4>
+                    <h3>Cyan</h3>
                     <p>High contrast on most maps, preferred by many pro players for visibility.</p>
                 </div>
 
@@ -919,7 +919,7 @@
                     <div class="color-icon" style="background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h4>Green</h4>
+                    <h3>Green</h3>
                     <p>Clean visibility with excellent contrast against dark and light backgrounds.</p>
                 </div>
 
@@ -927,7 +927,7 @@
                     <div class="color-icon" style="background: linear-gradient(135deg, #ffff00 0%, #cccc00 100%);">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h4>Yellow</h4>
+                    <h3>Yellow</h3>
                     <p>Great against dark backgrounds, highly visible in shadowed areas.</p>
                 </div>
 
@@ -935,7 +935,7 @@
                     <div class="color-icon" style="background: linear-gradient(135deg, #ff1493 0%, #cc1177 100%);">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h4>Pink</h4>
+                    <h3>Pink</h3>
                     <p>Strong on bright maps, stands out in most lighting conditions.</p>
                 </div>
 
@@ -943,7 +943,7 @@
                     <div class="color-icon" style="background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);">
                         <i class="fas fa-crosshairs"></i>
                     </div>
-                    <h4>White</h4>
+                    <h3>White</h3>
                     <p>Simple and universal, works well for players who prefer classic styling.</p>
                 </div>
             </div>
@@ -965,7 +965,7 @@
                     <div class="import-step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h4>Copy the Code</h4>
+                            <h3>Copy the Code</h3>
                             <p>Click the "Copy Code" button on any crosshair you like from our database.</p>
                         </div>
                     </div>
@@ -973,7 +973,7 @@
                     <div class="import-step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h4>Open Valorant Settings</h4>
+                            <h3>Open Valorant Settings</h3>
                             <p>Launch Valorant and navigate to Settings → Crosshair settings menu.</p>
                         </div>
                     </div>
@@ -981,7 +981,7 @@
                     <div class="import-step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4>Import Profile Code</h4>
+                            <h3>Import Profile Code</h3>
                             <p>Click "Import Profile Code" and paste the copied code into the text box.</p>
                         </div>
                     </div>
@@ -989,7 +989,7 @@
                     <div class="import-step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h4>Save and Play</h4>
+                            <h3>Save and Play</h3>
                             <p>Your new crosshair appears instantly. Test it in the Range or jump into a match!</p>
                         </div>
                     </div>
@@ -1018,7 +1018,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>What is the best crosshair for Valorant?</h4>
+                        <h3>What is the best crosshair for Valorant?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>The best crosshair depends on visibility and comfort. Most players prefer minimal, static crosshairs with bright colors. Dot crosshairs and classic four-line crosshairs are the most popular among competitive players.</p>
@@ -1028,7 +1028,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>What crosshair do pro players use?</h4>
+                        <h3>What crosshair do pro players use?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>Pro players use clean, minimal setups with short inner lines, no outer lines, and bright colors like cyan or green. You can find every Valorant pro crosshair in our database with ready-to-import codes.</p>
@@ -1038,7 +1038,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>How do I copy Valorant crosshair codes?</h4>
+                        <h3>How do I copy Valorant crosshair codes?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>Click the "Copy Code" button on any crosshair page, open Valorant, go to Settings → Crosshair, select "Import Profile Code," and paste the code into the text box.</p>
@@ -1048,7 +1048,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>What color crosshair is easiest to see?</h4>
+                        <h3>What color crosshair is easiest to see?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>Cyan, green, and yellow are the highest-visibility colors for most maps. These colors provide excellent contrast against both dark and light backgrounds.</p>
@@ -1058,7 +1058,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>Should I use a dot or lines crosshair?</h4>
+                        <h3>Should I use a dot or lines crosshair?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>Dots help with precision and headshot accuracy, while lines help with general tracking and spray control. Many competitive players use hybrid crosshairs that combine both elements.</p>
@@ -1068,7 +1068,7 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h4>Why is my crosshair not showing properly?</h4>
+                        <h3>Why is my crosshair not showing properly?</h3>
                     </div>
                     <div class="faq-answer">
                         <p>You may have movement or firing error enabled, ADS override active, or a color that blends into the map. Try resetting your crosshair settings or adjusting the color for better visibility.</p>
@@ -1092,37 +1092,37 @@
                 <div class="why-us-grid">
                     <div class="why-us-item">
                         <i class="fas fa-database"></i>
-                        <h4>Massive Crosshair Database</h4>
+                        <h3>Massive Crosshair Database</h3>
                         <p>Thousands of verified crosshairs from pros, streamers, and the community.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-sync-alt"></i>
-                        <h4>Daily Updates</h4>
+                        <h3>Daily Updates</h3>
                         <p>Pro crosshairs and trending designs updated every day to keep you current.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-check-double"></i>
-                        <h4>Verified Codes</h4>
+                        <h3>Verified Codes</h3>
                         <p>Every crosshair code is tested and verified to work perfectly in-game.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-eye"></i>
-                        <h4>Clean Previews</h4>
+                        <h3>Clean Previews</h3>
                         <p>High-quality previews on multiple backgrounds for accurate visibility testing.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-filter"></i>
-                        <h4>Advanced Filtering</h4>
+                        <h3>Advanced Filtering</h3>
                         <p>Sort by style, color, visibility, purpose, and pro player for easy searching.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-users"></i>
-                        <h4>Community Driven</h4>
+                        <h3>Community Driven</h3>
                         <p>Submit your own crosshairs and discover unique designs from other players.</p>
                     </div>
                 </div>

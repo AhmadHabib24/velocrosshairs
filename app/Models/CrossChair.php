@@ -78,7 +78,7 @@ class CrossChair extends Model
                     [
                         'user_id' => $crosschair->created_by,
                         'crosshair_id' => $crosschair->id,
-                        'link' => route('admin.crosshairs.show', $crosschair->slug),
+                        'link' => route('admin.CrossChair.edit', $crosschair->id),
                         'extra_data' => [
                             'crosshair_name' => $crosschair->name,
                             'status' => $crosschair->status,

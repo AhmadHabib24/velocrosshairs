@@ -25,7 +25,22 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Event::listen(\Illuminate\Mail\Events\MessageSent::class, function (\Illuminate\Mail\Events\MessageSent $event) {
+            $message = $event->message;
+            $to = [];
+            if ($message->getTo()) {
+                foreach ($message->getTo() as $address) {
+                    $to[] = $address->getAddress();
+                }
+            }
+            
+            \App\Models\EmailLog::create([
+                'to_email' => implode(', ', $to),
+                'subject' => $message->getSubject(),
+                'body' => $message->getHtmlBody() ?? $message->getTextBody(),
+                'is_read' => false,
+            ]);
+        });
     }
 
     /**

@@ -18,8 +18,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900" rel="stylesheet" />
-    <link href="https://fonts.bunny.net/css?family=orbitron:400,500,700,900" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=orbitron:400,500,700,900&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -37,7 +37,7 @@
             --dark-border: #2A2B35;
             --text-primary: #FFFFFF;
             --text-secondary: #B4B6C7;
-            --text-muted: #6B6D7A;
+            --text-muted: #8A8D9F;
 
             --success: #00D25B;
             --warning: #FFB800;
@@ -526,7 +526,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="vc-mobile-menu-btn" onclick="toggleMobileMenu()">
+            <button class="vc-mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
 
@@ -555,27 +555,27 @@
                 </p>
 
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/profile.php?id=61554388204731" class="footer-social" title="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61554388204731" class="footer-social" title="Facebook" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 
-                    <a href="https://www.pinterest.com/velocrosshairs/" class="footer-social" title="Pinterest">
+                    <a href="https://www.pinterest.com/velocrosshairs/" class="footer-social" title="Pinterest" aria-label="Pinterest">
                         <i class="fab fa-pinterest-p"></i>
                     </a>
                 
-                    <a href="https://www.instagram.com/velocrosshairs/" class="footer-social" title="Instagram">
+                    <a href="https://www.instagram.com/velocrosshairs/" class="footer-social" title="Instagram" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                 
-                    <a href="#" class="footer-social" title="TikTok">
+                    <a href="#" class="footer-social" title="TikTok" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
                     </a>
                 
-                    <a href="https://x.com/velocrosshairs" class="footer-social" title="X (Twitter)">
+                    <a href="https://x.com/velocrosshairs" class="footer-social" title="X (Twitter)" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
                 
-                    <a href="https://www.youtube.com/channel/UCvRaClS5p9q3n00U8T_xGnw" class="footer-social" title="YouTube">
+                    <a href="https://www.youtube.com/channel/UCvRaClS5p9q3n00U8T_xGnw" class="footer-social" title="YouTube" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -616,42 +616,46 @@
 
 
     <!-- Scripts -->
-    <script>
-        window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+    <script defer>
+        window.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', function () {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            });
+
+            document.addEventListener('click', function (event) {
+                const navLinks = document.getElementById('navLinks');
+                const mobileBtn = document.querySelector('.vc-mobile-menu-btn');
+
+                if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
 
         function toggleMobileMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
-
-        document.addEventListener('click', function (event) {
-            const navLinks = document.getElementById('navLinks');
-            const mobileBtn = document.querySelector('.vc-mobile-menu-btn');
-
-            if (!navLinks.contains(event.target) && !mobileBtn.contains(event.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
     </script>
 
-    <script>
-        document.addEventListener('click', function (e) {
-            const dropdowns = document.querySelectorAll('.vc-nav-links li.vc-dropdown');
+    <script defer>
+        window.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function (e) {
+                const dropdowns = document.querySelectorAll('.vc-nav-links li.vc-dropdown');
 
-            const clickedDropdown = e.target.closest('.vc-nav-links li.vc-dropdown');
-            if (clickedDropdown) {
-                dropdowns.forEach(d => { if (d !== clickedDropdown) d.classList.remove('open'); });
-                clickedDropdown.classList.toggle('open');
-                return;
-            }
-            dropdowns.forEach(d => d.classList.remove('open'));
-        });
+                const clickedDropdown = e.target.closest('.vc-nav-links li.vc-dropdown');
+                if (clickedDropdown) {
+                    dropdowns.forEach(d => { if (d !== clickedDropdown) d.classList.remove('open'); });
+                    clickedDropdown.classList.toggle('open');
+                    return;
+                }
+                dropdowns.forEach(d => d.classList.remove('open'));
+            });
 
-        window.addEventListener('resize', () => {
-            document.querySelectorAll('.vc-nav-links li.vc-dropdown').forEach(d => d.classList.remove('open'));
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('.vc-nav-links li.vc-dropdown').forEach(d => d.classList.remove('open'));
+            });
         });
     </script>
 

@@ -32,7 +32,7 @@
             /* Text colors */
             --text-primary: #FFFFFF;
             --text-secondary: #B4B6C7;
-            --text-muted: #6B6D7A;
+            --text-muted: #8A8D9F;
 
             /* Accent colors */
             --success: #00D25B;
@@ -341,18 +341,22 @@
 
         .topbar-btn .badge {
             position: absolute;
-            top: -5px;
-            right: -5px;
+            top: 0;
+            right: 0;
+            transform: translate(40%, -40%);
             background: var(--danger);
             color: white;
             font-size: 0.65rem;
-            padding: 0.15rem 0.4rem;
-            border-radius: 10px;
+            padding: 0.2rem 0.4rem;
+            border-radius: 50rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             min-width: 18px;
+            height: 18px;
+            line-height: 1;
+            white-space: nowrap;
         }
 
         .user-menu {
@@ -1012,10 +1016,38 @@
                             </div>
                         </div>
 
-                        <button class="topbar-btn">
-                            <i class="fas fa-envelope"></i>
-                            <span class="badge">{{ \App\Models\Contact::where('status', 'pending')->count() }}</span>
-                        </button>
+                        <!-- Email Notification Dropdown -->
+                        <div class="notification-wrapper">
+                            <button class="topbar-btn" id="emailBtn">
+                                <i class="fas fa-envelope"></i>
+                                <span class="badge" id="emailBadge" style="{{ \App\Models\EmailLog::where('is_read', false)->count() > 0 ? '' : 'display:none;' }}">
+                                    {{ \App\Models\EmailLog::where('is_read', false)->count() }}
+                                </span>
+                            </button>
+                            
+                            <div class="notification-dropdown" id="emailDropdown">
+                                <div class="notification-header">
+                                    <h3>Email Logs</h3>
+                                    <button class="mark-all-read" id="markAllEmailRead">
+                                        <i class="fas fa-check-double"></i> Mark all read
+                                    </button>
+                                </div>
+                                
+                                <div class="notification-list" id="emailList">
+                                    <div class="notification-loading">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Loading emails...
+                                    </div>
+                                </div>
+                                
+                                <div class="notification-footer">
+                                    <!-- Optional View All if you create an index page -->
+                                    <a href="#" class="view-all-btn">
+                                        Email Notification Center
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="user-menu-wrapper">
@@ -1293,6 +1325,142 @@
                     .then(response => response.json())
                     .then(data => {
                         updateBadge(data.unread_count);
+                    });
+            }
+        }, 30000);
+    });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const emailBtn = document.getElementById('emailBtn');
+        const emailDropdown = document.getElementById('emailDropdown');
+        const emailList = document.getElementById('emailList');
+        const emailBadge = document.getElementById('emailBadge');
+        const markAllEmailReadBtn = document.getElementById('markAllEmailRead');
+        
+        // Toggle email dropdown
+        emailBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            emailDropdown.classList.toggle('active');
+            
+            if (emailDropdown.classList.contains('active')) {
+                loadEmails();
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!emailDropdown.contains(e.target) && e.target !== emailBtn && !emailBtn.contains(e.target)) {
+                emailDropdown.classList.remove('active');
+            }
+        });
+        
+        // Load emails
+        function loadEmails() {
+            fetch('{{ route("admin.emails.unread") }}')
+                .then(response => response.json())
+                .then(data => {
+                    displayEmails(data.emails);
+                    updateEmailBadge(data.unread_count);
+                })
+                .catch(error => {
+                    console.error('Error loading emails:', error);
+                    emailList.innerHTML = `
+                        <div class="notification-empty">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>Failed to load emails</p>
+                        </div>
+                    `;
+                });
+        }
+        
+        // Display emails
+        function displayEmails(emails) {
+            if (emails.length === 0) {
+                emailList.innerHTML = `
+                    <div class="notification-empty">
+                        <i class="fas fa-envelope-open"></i>
+                        <p>No new emails</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            emailList.innerHTML = emails.map(email => `
+                <div class="notification-item ${email.is_read ? '' : 'unread'}" 
+                     data-link="${email.link || '#'}">
+                    <div class="notification-icon ${email.color}">
+                        <i class="${email.icon}"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">${email.title}</div>
+                        <div class="notification-message">${email.message}</div>
+                        <div class="notification-time">${formatTime(email.created_at)}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add click handlers to email items
+            document.querySelectorAll('#emailList .notification-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const link = this.dataset.link;
+                    if (link && link !== '#' && link !== 'null') {
+                        window.location.href = link;
+                    }
+                });
+            });
+        }
+        
+        // Mark all as read
+        markAllEmailReadBtn.addEventListener('click', function() {
+            fetch('{{ route("admin.emails.readAll") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    loadEmails();
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        
+        // Update badge count
+        function updateEmailBadge(count) {
+            if (count > 0) {
+                emailBadge.textContent = count > 99 ? '99+' : count;
+                emailBadge.style.display = 'flex';
+            } else {
+                emailBadge.style.display = 'none';
+            }
+        }
+        
+        // Format time
+        function formatTime(timestamp) {
+            const date = new Date(timestamp);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000);
+            
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return Math.floor(diff / 60) + ' minutes ago';
+            if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+            if (diff < 604800) return Math.floor(diff / 86400) + ' days ago';
+            
+            return date.toLocaleDateString();
+        }
+        
+        // Auto-refresh emails every 30 seconds
+        setInterval(() => {
+            if (!emailDropdown.classList.contains('active')) {
+                fetch('{{ route("admin.emails.unread") }}')
+                    .then(response => response.json())
+                    .then(data => {
+                        updateEmailBadge(data.unread_count);
                     });
             }
         }, 30000);

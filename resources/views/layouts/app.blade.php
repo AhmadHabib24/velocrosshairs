@@ -18,15 +18,38 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.bunny.net/css?family=orbitron:400,500,700,900&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" rel="stylesheet" /></noscript>
+    
+    <link rel="preload" href="https://fonts.bunny.net/css?family=orbitron:400,500,700,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://fonts.bunny.net/css?family=orbitron:400,500,700,900&display=swap" rel="stylesheet" /></noscript>
+    <!-- Defer Bootstrap CSS -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"></noscript>
 
-    <!-- Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Defer Icons (FontAwesome) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <style>
+        /* Override FontAwesome font-display to swap */
+        @font-face {
+          font-family: 'Font Awesome 6 Free';
+          font-style: normal;
+          font-weight: 900;
+          font-display: swap;
+          src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2") format("woff2"),
+               url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.ttf") format("truetype");
+        }
+        @font-face {
+          font-family: 'Font Awesome 6 Brands';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2") format("woff2"),
+               url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.ttf") format("truetype");
+        }
+        
         :root {
             --primary-pink: #FF2D5F;
             --primary-coral: #FF6B7A;
@@ -457,7 +480,7 @@
             <!-- Left: Logo -->
             <div class="vc-nav-left">
                 <a href="{{ route('/') }}" class="vc-logo">
-                    <img src="{{ asset('crosshairlogo.png') }}" alt="Velocrosshairs Logo">
+                    <img src="{{ asset('crosshairlogo-small.png') }}" alt="Velocrosshairs Logo">
                 </a>
             </div>
 
@@ -546,7 +569,7 @@
             <div class="footer-section">
                 <!-- ✅ LOGO + NAME -->
                 <div class="footer-brand">
-                    <img src="{{ asset('crosshairlogo.png') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
+                    <img src="{{ asset('crosshairlogo-small.png') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
                     <!--<h3>Velocrosshairs</h3>-->
                 </div>
 

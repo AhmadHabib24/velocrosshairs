@@ -764,7 +764,7 @@
                                         src="{{ url('storage/app/public/' . $crosshair->image) }}"
                                         alt="{{ $crosshair->name }}"
                                         class="crosshair-preview-img"
-                                        loading="lazy"
+                                        @if($loop->first) fetchpriority="high" @else loading="lazy" @endif
                                         width="90"
                                         height="90"
                                     >

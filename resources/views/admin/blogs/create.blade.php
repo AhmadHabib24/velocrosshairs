@@ -73,6 +73,11 @@
             <input type="text" name="title" class="form-control" required value="{{ old('title') }}">
         </div>
 
+        <div class="form-group">
+            <label class="form-label">Slug (Optional)</label>
+            <input type="text" name="slug" class="form-control" value="{{ old('slug') }}" placeholder="Auto-generated if left blank">
+        </div>
+
         <div style="display: flex; gap: 1rem;">
             <div class="form-group" style="flex: 1;">
                 <label class="form-label">Category *</label>

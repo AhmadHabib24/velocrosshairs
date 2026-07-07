@@ -29,6 +29,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:blogs,slug',
             'category_id' => 'required|exists:blog_categories,id',
             'content' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
@@ -44,7 +45,7 @@ class BlogController extends Controller
 
         $blog = Blog::create([
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => $request->slug ? Str::slug($request->slug) : Str::slug($request->title),
             'category_id' => $request->category_id,
             'content' => $request->content,
             'image' => $imagePath,
@@ -73,6 +74,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255|unique:blogs,slug,' . $blog->id,
             'category_id' => 'required|exists:blog_categories,id',
             'content' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
@@ -86,7 +88,7 @@ class BlogController extends Controller
 
         $data = [
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => $request->slug ? Str::slug($request->slug) : Str::slug($request->title),
             'category_id' => $request->category_id,
             'content' => $request->content,
             'status' => $request->status,

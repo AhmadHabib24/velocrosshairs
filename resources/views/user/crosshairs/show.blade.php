@@ -34,14 +34,14 @@
 
                         <div class="crosshair-display">
                             @if($crosshair->image)
-                                {{-- ✅ Using url('storage/app/public/') format --}}
+                                {{-- ✅ Using asset('storage/') format --}}
                                 @php
                                     $imagePath = $crosshair->image;
                                     // Remove 'public/storage/' or 'storage/app/public/' if present
                                     $imagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $imagePath);
                                 @endphp
                                 <img 
-                                    src="{{ url('storage/app/public/' . $imagePath) }}"
+                                    src="{{ asset('storage/' . $imagePath) }}"
                                     alt="{{ $crosshair->name }}"
                                     class="main-crosshair-img"
                                 >
@@ -252,7 +252,7 @@
                                 $bgImagePath = $bgImage->image;
                                 $bgImagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $bgImagePath);
                             @endphp
-                            <img src="{{ url('storage/app/public/' . $bgImagePath) }}"
+                            <img src="{{ asset('storage/' . $bgImagePath) }}"
                                  alt="{{ $bgImage->name }}"
                                  class="gallery-bg-image">
 
@@ -261,7 +261,7 @@
                                     @php
                                         $imagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $crosshair->image);
                                     @endphp
-                                    <img src="{{ url('storage/app/public/' . $imagePath) }}"
+                                    <img src="{{ asset('storage/' . $imagePath) }}"
                                          alt="{{ $crosshair->name }}"
                                          class="gallery-crosshair-img">
                                 @elseif($crosshair->crosshair_code)
@@ -297,7 +297,7 @@
                             @php
                                 $imagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $crosshair->image);
                             @endphp
-                            <img src="{{ url('storage/app/public/' . $imagePath) }}"
+                            <img src="{{ asset('storage/' . $imagePath) }}"
                                  alt="{{ $crosshair->name }}"
                                  class="modal-crosshair-img">
                         @elseif($crosshair->crosshair_code)
@@ -329,7 +329,7 @@
                                 $relatedImagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $related->image);
                             @endphp
                             <img 
-                                src="{{ url('storage/app/public/' . $relatedImagePath) }}"
+                                src="{{ asset('storage/' . $relatedImagePath) }}"
                                 alt="{{ $related->name }}"
                                 class="related-crosshair-img"
                             >
@@ -930,7 +930,7 @@ const backgroundImagesData = {
                 $jsImagePath = preg_replace('#^(public/storage/|storage/app/public/)#', '', $bgImage->image);
             @endphp
             {{ $bgImage->id }}: {
-                image: '{{ url('storage/app/public/' . $jsImagePath) }}',
+                image: '{{ asset('storage/' . $jsImagePath) }}',
                 name: '{{ addslashes($bgImage->name) }}',
                 creator: '{{ $bgImage->creator ? addslashes($bgImage->creator->name) : 'Background Image' }}'
             },

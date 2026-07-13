@@ -11,10 +11,10 @@
         content="@yield('description', 'Download professional gaming crosshairs, create custom crosshair overlays, and improve your aim with our advanced crosshair technology.')">
     <meta name="keywords" content="@yield('keywords', 'gaming, crosshairs, valorant, overlays')">
         <!-- Favicon (multi-size) -->
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('crosshairlogo.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('crosshairlogo.png?v=2') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -480,7 +480,7 @@
             <!-- Left: Logo -->
             <div class="vc-nav-left">
                 <a href="{{ route('/') }}" class="vc-logo">
-                    <img src="{{ asset('crosshairlogo-small.png') }}" alt="Velocrosshairs Logo">
+                    <img src="{{ asset('crosshairlogo-small.png?v=2') }}" alt="Velocrosshairs Logo">
                 </a>
             </div>
 
@@ -569,7 +569,7 @@
             <div class="footer-section">
                 <!-- ✅ LOGO + NAME -->
                 <div class="footer-brand">
-                    <img src="{{ asset('crosshairlogo-small.png') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
+                    <img src="{{ asset('crosshairlogo-small.png?v=2') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
                     <!--<h3>Velocrosshairs</h3>-->
                 </div>
 

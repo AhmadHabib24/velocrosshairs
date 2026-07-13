@@ -166,21 +166,9 @@
         selector: '#blogContent',
         height: 500,
         plugins: [
-            'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
-            'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'advtemplate', 'tinymceai', 'uploadcare', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
+            'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount'
         ],
-        toolbar: 'undo redo | tinymceai-chat tinymceai-quickactions tinymceai-review | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name',
-        mergetags_list: [
-            { value: 'First.Name', title: 'First Name' },
-            { value: 'Email', title: 'Email' },
-        ],
-        tinymceai_token_provider: async () => {
-            await fetch(`https://demo.api.tiny.cloud/1/ztumrn6qh6dox1xnai9cezm4ltqnm9wr6c533m2akebnn3op/auth/random`, { method: "POST", credentials: "include" });
-            return { token: await fetch(`https://demo.api.tiny.cloud/1/ztumrn6qh6dox1xnai9cezm4ltqnm9wr6c533m2akebnn3op/jwt/tinymceai`, { credentials: "include" }).then(r => r.text()) };
-        },
-        uploadcare_public_key: '153553e64f8e7a8c5619',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
     });
 </script>

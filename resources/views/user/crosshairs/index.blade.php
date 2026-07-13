@@ -427,7 +427,7 @@
                             <div class="crosshair-preview-area">
                                 @if($crosshair->image)
                                     <img 
-                                        src="{{ url('storage/app/public/' . $crosshair->image) }}" 
+                                        src="{{ asset('storage/' . $crosshair->image) }}" 
                                         alt="{{ $crosshair->name }}"
                                     >
                                 @else

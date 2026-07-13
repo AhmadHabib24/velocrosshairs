@@ -297,7 +297,7 @@
                         <td>{{ $category->id }}</td>
                         <td>
                             @if($category->image)
-                               <img src="{{ url('storage/app/public/' . $category->image) }}" 
+                               <img src="{{ asset('storage/' . $category->image) }}" 
      alt="{{ $category->name }}" 
      class="category-image">
 

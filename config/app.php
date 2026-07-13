@@ -61,7 +61,7 @@ return [
 
     'url' => env('APP_URL', 'https://velocrosshairs.com'),
 
-    'asset_url' => env('ASSET_URL', 'https://velocrosshairs.com/public'),
+    'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------

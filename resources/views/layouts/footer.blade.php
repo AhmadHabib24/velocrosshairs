@@ -7,7 +7,7 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <!-- ✅ LOGO IMAGE ADDED -->
-                        <img src="{{ asset('crosshairlogo.png') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
+                        <img src="{{ asset('crosshairlogo.png?v=2') }}" alt="Velocrosshairs Logo" class="footer-logo-img">
 
                         <h3 class="font-gaming">Velocrosshairs</h3>
                     </div>

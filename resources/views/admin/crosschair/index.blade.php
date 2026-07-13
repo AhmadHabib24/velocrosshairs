@@ -466,7 +466,7 @@
                             <td>{{ $crosschair->id }}</td>
                             <td>
                                 @if($crosschair->image)
-                                    <img src="{{ url('storage/app/public/' . $crosschair->image) }}" 
+                                    <img src="{{ asset('storage/' . $crosschair->image) }}" 
                                          alt="{{ $crosschair->name }}" 
                                          class="crosschair-image">
                                 @else
@@ -564,7 +564,7 @@
                             <td>{{ $crosschair->id }}</td>
                             <td>
                                 @if($crosschair->image)
-                                    <img src="{{ url('storage/app/public/' . $crosschair->image) }}" 
+                                    <img src="{{ asset('storage/' . $crosschair->image) }}" 
                                          alt="{{ $crosschair->name }}" 
                                          class="crosschair-image">
                                 @else

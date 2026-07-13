@@ -7,10 +7,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'User Dashboard') - Cross hairs</title>
     <meta name="google-site-verification" content="pytzcoDkZoK3ZAyigYcbZaWU_NeXV11YztLRB9Td2pI" />
-     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('crosshairlogo.png') }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('crosshairlogo.png') }}">
+     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('crosshairlogo.png?v=2') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('crosshairlogo.png?v=2') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -552,7 +552,7 @@
              <div class="sidebar-header">
                 <a href="{{ route('user.dashboard') }}" class="sidebar-logo">
                     <div class="sidebar-logo-icon">
-                        <img src="{{ asset('crosshairlogo.png') }}" 
+                        <img src="{{ asset('crosshairlogo.png?v=2') }}" 
                              alt="Crosshair Logo" 
                              style="width: 100%; height: 100%; object-fit: contain;"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">

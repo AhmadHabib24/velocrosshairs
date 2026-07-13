@@ -761,7 +761,7 @@
                             <div class="crosshair-preview-container">
                                 @if($crosshair->image)
                                     <img
-                                        src="{{ url('storage/app/public/' . $crosshair->image) }}"
+                                        src="{{ asset('storage/' . $crosshair->image) }}"
                                         alt="{{ $crosshair->name }}"
                                         class="crosshair-preview-img"
                                         @if($loop->first) fetchpriority="high" @else loading="lazy" @endif

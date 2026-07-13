@@ -370,10 +370,10 @@
                         <td>{{ $bgImage->id }}</td>
                         <td>
                             @if($bgImage->image)
-                               <img src="{{ url('storage/app/public/' . $bgImage->image) }}" 
+                               <img src="{{ asset('storage/' . $bgImage->image) }}" 
      alt="{{ $bgImage->name }}" 
      class="bg-image"
-     onclick="showImageModal('{{ url('storage/app/public/' . $bgImage->image) }}')">
+     onclick="showImageModal('{{ asset('storage/' . $bgImage->image) }}')">
 
                             @else
                                 <div class="bg-image" style="background: var(--dark-bg); display: flex; align-items: center; justify-content: center;">

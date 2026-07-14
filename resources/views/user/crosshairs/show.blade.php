@@ -245,7 +245,7 @@
                 </div>
 
                 <div class="background-gallery-grid">
-                    @foreach($backgroundImages->take(6) as $bgImage)
+                    @foreach($backgroundImages->take(9) as $bgImage)
                     <div class="background-gallery-item" onclick="openBackgroundPreviewModal({{ $bgImage->id }})">
                         <div class="gallery-preview">
                             @php
@@ -266,7 +266,7 @@
                                          class="gallery-crosshair-img">
                                 @elseif($crosshair->crosshair_code)
                                     <div class="gallery-crosshair-svg">
-                                        {!! \App\Helpers\CrosshairCodeParser::generateSVG($crosshair->crosshair_code, 80) !!}
+                                        {!! \App\Helpers\CrosshairCodeParser::generateSVG($crosshair->crosshair_code, 150) !!}
                                     </div>
                                 @endif
                             </div>
@@ -555,18 +555,18 @@
 .gallery-modal-header h2 i { color:var(--primary-pink); }
 .gallery-modal-header p { color:var(--text-secondary); margin:0 0 1.5rem; font-size:0.9rem; } /* Changed from 1rem to 0.9rem */
 .background-gallery-grid {
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; /* Changed from 1.5rem to 1rem */
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
 }
 .background-gallery-item {
     background:var(--dark-card); border:1px solid var(--dark-border);
-    border-radius:1rem; overflow:hidden; cursor:pointer;
-    transition:0.3s; aspect-ratio:16/9; position:relative; /* Changed from aspect-ratio:1 to 16/9 for smaller height */
+    border-radius:1rem; cursor:pointer; padding:1rem;
+    transition:0.3s; aspect-ratio:1; position:relative;
 }
 .background-gallery-item:hover {
-    transform:translateY(-5px); border-color:var(--primary-pink); /* Changed from -8px to -5px */
-    box-shadow:0 15px 45px rgba(255,45,95,0.2); /* Reduced shadow */
+    transform:translateY(-5px); border-color:var(--primary-pink);
+    box-shadow:0 15px 45px rgba(255,45,95,0.2);
 }
-.gallery-preview { position:relative; width:100%; height:100%; overflow:hidden; background:#000; }
+.gallery-preview { position:relative; width:100%; height:100%; overflow:hidden; background:#000; border-radius:0.5rem; }
 .gallery-bg-image {
     width:100%; height:100%; object-fit:cover; transition:0.3s;
 }
@@ -576,7 +576,7 @@
     z-index:2; pointer-events:none;
 }
 .gallery-crosshair-img,.gallery-crosshair-svg {
-    max-width:40px; max-height:40px; /* Changed from 60px to 40px */
+    max-width:100px; max-height:100px;
     filter:drop-shadow(0 0 10px rgba(0,0,0,0.8));
 }
 .gallery-overlay-info {

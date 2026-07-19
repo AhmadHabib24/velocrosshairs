@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Admin Dashboard') - Cross hairs</title>
     <meta name="google-site-verification" content="pytzcoDkZoK3ZAyigYcbZaWU_NeXV11YztLRB9Td2pI" />
+    <link rel="canonical" href="{{ url()->current() }}" />
     <!-- Favicon (multi-size) -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png?v=2') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png?v=2') }}">

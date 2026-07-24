@@ -1,14 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <style>
-    body {
-        background: var(--dark-bg);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 80px;
-    }
+
     
     .login-wrapper {
         min-height: calc(100vh - 80px);

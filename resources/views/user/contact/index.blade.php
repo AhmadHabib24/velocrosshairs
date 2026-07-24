@@ -480,6 +480,13 @@
                 </div>
             @endif
 
+            @if(session('error'))
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>{{ session('error') }}</span>
+                </div>
+            @endif
+
             @if($errors->any())
                 <div class="alert alert-error">
                     <i class="fas fa-exclamation-circle"></i>
@@ -580,6 +587,23 @@
                         required
                     >{{ old('message') }}</textarea>
                     @error('message')
+                        <span class="form-hint" style="color: #ef4444;">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="captcha">
+                        Anti-Spam Verification: What is {{ $num1 }} + {{ $num2 }}? <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="number" 
+                        id="captcha" 
+                        name="captcha" 
+                        class="form-input @error('captcha') is-invalid @enderror" 
+                        placeholder="Enter the sum"
+                        required
+                    >
+                    @error('captcha')
                         <span class="form-hint" style="color: #ef4444;">{{ $message }}</span>
                     @enderror
                 </div>

@@ -80,7 +80,11 @@ class HomeController extends Controller
     }
         public function contact()
     {
-        return view('user.contact.index');
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
+        session(['captcha_answer' => $num1 + $num2]);
+        
+        return view('user.contact.index', compact('num1', 'num2'));
     }
     
     public function submitContact(Request $request)
@@ -92,6 +96,7 @@ class HomeController extends Controller
             'subject' => 'required|string|in:general,crosshair_submission,crosshair_correction,technical_support,business_partnership,feedback,other',
             'crosshair_code' => 'nullable|string|max:500',
             'message' => 'required|string|min:10|max:2000',
+            'captcha' => 'required|integer',
         ], [
             'name.required' => 'Please enter your name.',
             'email.required' => 'Please enter your email address.',
@@ -102,7 +107,15 @@ class HomeController extends Controller
             'message.min' => 'Message must be at least 10 characters.',
             'message.max' => 'Message cannot exceed 2000 characters.',
             'crosshair_code.max' => 'Crosshair code is too long.',
+            'captcha.required' => 'Please solve the math problem to verify you are human.',
+            'captcha.integer' => 'Captcha answer must be a number.',
         ]);
+        
+        $validator->after(function ($validator) use ($request) {
+            if ($request->has('captcha') && (int)$request->captcha !== session('captcha_answer')) {
+                $validator->errors()->add('captcha', 'Incorrect captcha answer, please try again.');
+            }
+        });
     
         if ($validator->fails()) {
             return redirect()->back()

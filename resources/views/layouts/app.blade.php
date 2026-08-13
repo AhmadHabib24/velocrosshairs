@@ -10,7 +10,13 @@
     <meta name="description"
         content="@yield('description', 'Download professional gaming crosshairs, create custom crosshair overlays, and improve your aim with our advanced crosshair technology.')">
     <meta name="keywords" content="@yield('keywords', 'gaming, crosshairs, valorant, overlays')">
-    <link rel="canonical" href="{{ url()->current() }}" />
+    @php
+        $canonicalUrl = url()->current();
+        if (request()->has('category')) {
+            $canonicalUrl .= '?category=' . request('category');
+        }
+    @endphp
+    <link rel="canonical" href="{{ $canonicalUrl }}" />
         <!-- Favicon (multi-size) -->
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png?v=2') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png?v=2') }}">

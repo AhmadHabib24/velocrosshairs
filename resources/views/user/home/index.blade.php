@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Valorant Crosshairs: Pro Codes, Best Settings & Crosshair Guide')
+@section('title', 'Valorant Crosshair Codes & Settings | Velocrosshairs')
 @section('description', 'Find the best Valorant crosshairs, pro player codes, popular styles, and clean presets. Explore top crosshairs for aim, visibility, ranked play, and beginners.')
 
 @push('styles')
@@ -742,7 +742,7 @@
 @section('content')
 
     <!-- SEO H1 Tag -->
-    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Valorant Crosshairs: Pro Codes, Best Settings & Crosshair Guide</h1>
+    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Valorant Crosshair Codes</h1>
 
     <!-- Popular Crosshairs Showcase -->
     <section class="showcase">

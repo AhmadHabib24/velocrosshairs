@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Valorant Crosshairs Gallery – Pro, Popular & Community Codes')
-@section('description', 'Browse the complete Valorant crosshairs gallery with pro, popular, and community presets. Copy crosshair codes instantly and find the best styles for aim and ranked play.')
+@section('title', 'Valorant Crosshairs Database: Best Pro & Community Codes')
+@section('description', 'Browse our complete Valorant crosshair database. Get the best crosshair codes used by pro players, discover popular styles, and copy them instantly to improve your aim.')
 
 @push('styles')
 <style>

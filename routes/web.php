@@ -78,7 +78,7 @@ Route::redirect('/download', '/crosshairs', 301);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::redirect('/home', '/', 301);
 
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(function () {

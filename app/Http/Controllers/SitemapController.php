@@ -10,8 +10,8 @@ class SitemapController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
-        $crosshairs = CrossChair::all();
+        $categories = Category::where('is_active', true)->get();
+        $crosshairs = CrossChair::where('is_active', true)->get();
 
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
         $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';

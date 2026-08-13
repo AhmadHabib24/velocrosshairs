@@ -41,7 +41,7 @@ class BlogController extends Controller
             'tags.*' => 'exists:tags,id'
         ]);
 
-        $imagePath = $request->file('image')->store('blogs', 'public');
+        $imagePath = $this->optimizeAndStoreImage($request->file('image'));
 
         $blog = Blog::create([
             'title' => $request->title,
@@ -105,7 +105,7 @@ class BlogController extends Controller
             if ($blog->image && Storage::disk('public')->exists($blog->image)) {
                 Storage::disk('public')->delete($blog->image);
             }
-            $data['image'] = $request->file('image')->store('blogs', 'public');
+            $data['image'] = $this->optimizeAndStoreImage($request->file('image'));
         }
 
         $blog->update($data);
@@ -117,6 +117,59 @@ class BlogController extends Controller
         }
 
         return redirect()->route('admin.blogs.index')->with('success', 'Blog updated successfully.');
+    }
+
+    private function optimizeAndStoreImage($file)
+    {
+        $info = @getimagesize($file->getRealPath());
+        if (!$info) {
+            return $file->store('blogs', 'public');
+        }
+
+        $width = $info[0];
+        $height = $info[1];
+        $mime = $info['mime'];
+
+        $newWidth = $width;
+        $newHeight = $height;
+        if ($width > 800) {
+            $newWidth = 800;
+            $newHeight = (int)($height * (800 / $width));
+        }
+
+        $image = null;
+        if ($mime == 'image/jpeg') $image = @imagecreatefromjpeg($file->getRealPath());
+        elseif ($mime == 'image/png') $image = @imagecreatefrompng($file->getRealPath());
+        elseif ($mime == 'image/webp') $image = @imagecreatefromwebp($file->getRealPath());
+
+        if ($image) {
+            $newImage = imagecreatetruecolor($newWidth, $newHeight);
+            if ($mime == 'image/png' || $mime == 'image/webp') {
+                imagealphablending($newImage, false);
+                imagesavealpha($newImage, true);
+                $transparent = imagecolorallocatealpha($newImage, 255, 255, 255, 127);
+                imagefilledrectangle($newImage, 0, 0, $newWidth, $newHeight, $transparent);
+            }
+
+            imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+            
+            $filename = Str::random(40) . '.webp';
+            $dir = storage_path('app/public/blogs');
+            
+            if (!file_exists($dir)) {
+                mkdir($dir, 0755, true);
+            }
+            
+            $path = $dir . '/' . $filename;
+            imagewebp($newImage, $path, 75);
+
+            imagedestroy($image);
+            imagedestroy($newImage);
+
+            return 'blogs/' . $filename;
+        }
+
+        return $file->store('blogs', 'public');
     }
 
     public function destroy(Blog $blog)

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', $crosshair->name . ' - Crosshair Details')
+@section('title', $crosshair->name . ' Code & Settings | Velocrosshairs')
+@section('description', 'Get the exact ' . $crosshair->name . ' code and settings. Copy the crosshair profile directly and preview it on different backgrounds.')
 
 @section('content')
 <div class="crosshair-details">

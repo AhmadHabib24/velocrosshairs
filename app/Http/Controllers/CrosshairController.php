@@ -80,18 +80,15 @@ public function index(Request $request)
      */
     public function show($identifier)
     {
-        // Check if identifier is numeric (ID) or string (slug)
-        if (is_numeric($identifier)) {
-            $crosshair = CrossChair::with('category')
-                ->where('id', $identifier)
-                ->where('is_active', true)
-                ->firstOrFail();
-        } else {
-            $crosshair = CrossChair::with('category')
-                ->where('slug', $identifier)
-                ->where('is_active', true)
-                ->firstOrFail();
-        }
+        $crosshair = CrossChair::with('category')
+            ->where(function ($query) use ($identifier) {
+                $query->where('slug', $identifier);
+                if (is_numeric($identifier)) {
+                    $query->orWhere('id', $identifier);
+                }
+            })
+            ->where('is_active', true)
+            ->firstOrFail();
         
         // Increment views
         $crosshair->incrementViews();

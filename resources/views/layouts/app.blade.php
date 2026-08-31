@@ -488,7 +488,7 @@
 
             <!-- Left: Logo -->
             <div class="vc-nav-left">
-                <a href="{{ route('/') }}" class="vc-logo">
+                <a href="{{ route('home') }}" class="vc-logo">
                     <img src="{{ asset('crosshairlogo-small.png?v=2') }}" alt="Velocrosshairs Logo">
                 </a>
             </div>
@@ -496,7 +496,7 @@
             <!-- Center: Nav Links -->
             <ul class="vc-nav-links" id="navLinks">
                 <li>
-                    <a href="{{ route('/') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
+                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
                 </li>
 
                 <li class="vc-dropdown">

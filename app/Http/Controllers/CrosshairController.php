@@ -94,7 +94,7 @@ public function index(Request $request)
         $crosshair->incrementViews();
         
         // Get background images for this crosshair's category
-        $backgroundImages = [];
+        $backgroundImages = collect();
         if ($crosshair->category_id) {
             $backgroundImages = BackgroundImage::whereJsonContains('assigned_categories', $crosshair->category_id)
                 ->orWhere(function($query) use ($crosshair) {

@@ -31,7 +31,7 @@ Route::get('/storage-link', function () {
     }
 })->name('storage.link');
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
-Route::get('/', [HomeController::class, 'index'])->name(name: '/');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about-us', [HomeController::class, 'about'])->name(name: 'about-us');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');

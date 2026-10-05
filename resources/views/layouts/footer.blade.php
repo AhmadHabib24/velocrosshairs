@@ -87,8 +87,10 @@
                 <div class="footer-legal">
                     <p>&copy; {{ date('Y') }} Velocrosshairs. All rights reserved.</p>
                     <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="{{ route('Privacy-Policy') }}">Privacy Policy</a>
+                        <a href="{{ route('Terms-And-Conditions') }}">Terms & Conditions</a>
+                        <a href="{{ route('Disclaimer') }}">Disclaimer</a>
+                        <a href="{{ route('Advertisement-Policy') }}">Advertisement Policy</a>
                         <a href="#">Cookie Policy</a>
                         <a href="#">DMCA</a>
                     </div>

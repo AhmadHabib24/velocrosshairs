@@ -37,6 +37,9 @@ Route::get('/about-us', [HomeController::class, 'about'])->name(name: 'about-us'
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact', [HomeController::class, 'submitContact'])->name('contact.submit');
 Route::get('/privacy-policy', [HomeController::class, 'PrivacyPolicy'])->name('Privacy-Policy');
+Route::get('/terms-and-conditions', [HomeController::class, 'TermsAndConditions'])->name('Terms-And-Conditions');
+Route::get('/disclaimer', [HomeController::class, 'Disclaimer'])->name('Disclaimer');
+Route::get('/advertisement-policy', [HomeController::class, 'AdvertisementPolicy'])->name('Advertisement-Policy');
 
 // Blogs routes
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');

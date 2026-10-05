@@ -417,6 +417,85 @@
     </div>
 </section>
 
+
+<!-- New Contact Information -->
+<section class="content-section" style="padding-bottom: 0;">
+    <div class="container" style="max-width: 900px;">
+        <div class="info-box" style="margin-bottom: 3rem; background: rgba(255, 45, 95, 0.05); border: 1px solid rgba(255, 45, 95, 0.2); border-radius: 1rem; padding: 2rem;">
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+                We are always happy to hear from Valorant players. Whether you have a question, found a crosshair code that no longer works, or simply want to share feedback, you can get in touch with us.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin: 0;">
+                At Velocrosshairs, we value your feedback because it helps us improve our crosshair database and guides for everyone.
+            </p>
+        </div>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">How Can We Help?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">You can contact us for any of the following reasons:</p>
+        <ul style="color: var(--text-secondary); margin-bottom: 2rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Questions about Velocrosshairs</li>
+            <li>Reporting a crosshair code that does not work</li>
+            <li>Reporting an outdated pro player crosshair</li>
+            <li>Suggesting a crosshair or pro player to add</li>
+            <li>Reporting a technical issue or broken feature</li>
+            <li>Feedback about our website or guides</li>
+            <li>Privacy-related questions</li>
+            <li>Advertising inquiries</li>
+            <li>Legal or policy-related concerns</li>
+            <li>Other general questions</li>
+        </ul>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">Please provide as much relevant information as possible when contacting us. If you are reporting an issue with a crosshair, include the crosshair name or the page link so we can find it quickly.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Contact Us by Email</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">For general questions, feedback, suggestions, privacy concerns, or other inquiries, please email us at:</p>
+        <p style="margin-bottom: 1.5rem;"><a href="mailto:velocrosshairs@gmail.com" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;"><i class="fas fa-envelope"></i> velocrosshairs@gmail.com</a></p>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">We will review your message and make reasonable efforts to respond as soon as possible.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Crosshair Requests and Corrections</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Professional players change their crosshairs often, and game updates can affect how codes work. If you notice a code that is outdated or not importing correctly, please let us know.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">When reporting a crosshair, you may include:</p>
+        <ul style="color: var(--text-secondary); margin-bottom: 2rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>The crosshair or player name</li>
+            <li>The page link on Velocrosshairs</li>
+            <li>What went wrong, such as an import error or a crosshair that looks different in game</li>
+            <li>The correct or updated code, if you know it</li>
+        </ul>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">If you are a professional player or team representative and would like your crosshair information updated or removed, please contact us and we will review your request.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Feedback and Suggestions</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Have an idea that could make Velocrosshairs better?</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">We are always interested in hearing suggestions from players. If you would like to see a new crosshair style, a pro player added, a new guide, or a website improvement, feel free to send us your idea.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">While we cannot guarantee that every suggestion will be added, we appreciate all constructive feedback and consider it when improving our website.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Technical Issues</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">If you experience a problem while using our website, such as the "Copy Code" button not working, please describe the issue clearly in your email.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">You may include:</p>
+        <ul style="color: var(--text-secondary); margin-bottom: 2rem; padding-left: 1.5rem; line-height: 1.8;">
+            <li>The page or feature where the problem happened</li>
+            <li>A short description of the problem</li>
+            <li>The browser you are using</li>
+            <li>The type of device you are using</li>
+            <li>A screenshot, if helpful</li>
+        </ul>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">Providing these details can help us investigate the issue more effectively.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Privacy Questions</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">If you have questions about how information may be handled when you use Velocrosshairs, please contact us using the email address above.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">For more information, you can also review our <a href="{{ route('Privacy-Policy') }}" style="color: var(--primary-pink); text-decoration: none;">Privacy Policy</a>.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Please Note</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Velocrosshairs is an independent fan website and is not affiliated with Riot Games. We cannot help with Valorant account issues, bans, purchases, or game client problems. For those, please contact Riot Games support directly.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">We do our best to respond to genuine questions and concerns, but response times may vary depending on the nature and volume of inquiries we receive.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">Please never send your Riot Games login details, passwords, financial information, or other sensitive personal information by email.</p>
+
+        <h2 style="font-family: 'Orbitron', monospace; color: var(--text-primary); margin-bottom: 1.5rem;">Our Commitment</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">We appreciate every player who takes the time to contact us. Your questions, feedback, and crosshair suggestions help us improve Velocrosshairs and make our database more useful for everyone.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">We look forward to hearing from you.</p>
+        <p style="margin-bottom: 1rem;"><a href="mailto:velocrosshairs@gmail.com" style="color: var(--primary-pink); font-weight: bold; text-decoration: none;"><i class="fas fa-envelope"></i> velocrosshairs@gmail.com</a></p>
+        <p style="color: var(--text-secondary); margin-bottom: 3rem;">Thank you for visiting Velocrosshairs. Good luck in your next match!</p>
+    </div>
+</section>
+
 <!-- Contact Methods -->
 <section class="content-section">
     <div class="container">

@@ -339,7 +339,7 @@
                 We are committed to protecting your privacy and ensuring the security of your personal information.
             </p>
             <span class="last-updated">
-                <i class="fas fa-calendar-alt"></i> Last Updated: December 07, 2025
+                <i class="fas fa-calendar-alt"></i> Last Updated: Oct 4, 2026
             </span>
         </div>
     </div>
@@ -355,9 +355,9 @@
                 <i class="fas fa-info-circle"></i>
                 <div class="info-box-content">
                     <p>
-                        This Privacy Policy describes our policies and procedures on the collection, use, and disclosure 
-                        of your information when you use Velocrosshairs. By using our Service, you agree to the collection 
-                        and use of information in accordance with this Privacy Policy.
+                        Welcome to Velocrosshairs. We respect your privacy and believe you should know what information may be collected when you use our website and how that information is handled.<br><br>
+                        This Privacy Policy explains our approach to information collection, cookies, third-party services, advertising, and your privacy choices when you visit velocrosshairs.com.<br><br>
+                        By accessing or using Velocrosshairs, you agree to the practices described in this Privacy Policy. If you do not agree with this policy, please discontinue using our website.
                     </p>
                 </div>
             </div>
@@ -369,461 +369,251 @@
                     Table of Contents
                 </h2>
                 <ul class="toc-list">
-                    <li><a href="#definitions"><i class="fas fa-chevron-right"></i> Interpretation and Definitions</a></li>
-                    <li><a href="#collecting-data"><i class="fas fa-chevron-right"></i> Collecting and Using Your Personal Data</a></li>
-                    <li><a href="#use-of-data"><i class="fas fa-chevron-right"></i> Use of Your Personal Data</a></li>
-                    <li><a href="#sharing-data"><i class="fas fa-chevron-right"></i> Sharing Your Personal Information</a></li>
-                    <li><a href="#retention"><i class="fas fa-chevron-right"></i> Retention of Your Personal Data</a></li>
-                    <li><a href="#transfer"><i class="fas fa-chevron-right"></i> Transfer of Your Personal Data</a></li>
-                    <li><a href="#delete"><i class="fas fa-chevron-right"></i> Delete Your Personal Data</a></li>
-                    <li><a href="#disclosure"><i class="fas fa-chevron-right"></i> Disclosure of Your Personal Data</a></li>
-                    <li><a href="#security"><i class="fas fa-chevron-right"></i> Security of Your Personal Data</a></li>
-                    <li><a href="#children"><i class="fas fa-chevron-right"></i> Children's Privacy</a></li>
-                    <li><a href="#links"><i class="fas fa-chevron-right"></i> Links to Other Websites</a></li>
-                    <li><a href="#changes"><i class="fas fa-chevron-right"></i> Changes to This Privacy Policy</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> 1. About Velocrosshairs</a></li>
+                    <li><a href="#information-we-collect"><i class="fas fa-chevron-right"></i> 2. Information We Collect</a></li>
+                    <li><a href="#crosshair-codes"><i class="fas fa-chevron-right"></i> 3. Crosshair Codes and the Copy Feature</a></li>
+                    <li><a href="#cookies"><i class="fas fa-chevron-right"></i> 4. Cookies</a></li>
+                    <li><a href="#google-adsense"><i class="fas fa-chevron-right"></i> 5. Google AdSense and Advertising</a></li>
+                    <li><a href="#third-party-services"><i class="fas fa-chevron-right"></i> 6. Third-Party Services</a></li>
+                    <li><a href="#analytics"><i class="fas fa-chevron-right"></i> 7. Analytics</a></li>
+                    <li><a href="#how-we-use-information"><i class="fas fa-chevron-right"></i> 8. How We Use Information</a></li>
+                    <li><a href="#childrens-privacy"><i class="fas fa-chevron-right"></i> 9. Children's Privacy</a></li>
+                    <li><a href="#data-security"><i class="fas fa-chevron-right"></i> 10. Data Security</a></li>
+                    <li><a href="#external-links"><i class="fas fa-chevron-right"></i> 11. External Links and Riot Games</a></li>
+                    <li><a href="#your-privacy-rights"><i class="fas fa-chevron-right"></i> 12. Your Privacy Rights</a></li>
+                    <li><a href="#changes-to-policy"><i class="fas fa-chevron-right"></i> 13. Changes to This Privacy Policy</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> 14. Contact Us</a></li>
+                    <li><a href="#consent"><i class="fas fa-chevron-right"></i> 15. Consent</a></li>
                 </ul>
             </div>
 
-            <!-- Interpretation and Definitions -->
-            <div id="definitions" class="policy-section">
+            <!-- 1. About Velocrosshairs -->
+            <div id="about" class="policy-section">
                 <h2 class="section-title">
-                    <i class="fas fa-book"></i>
-                    Interpretation and Definitions
+                    <i class="fas fa-info-circle"></i>
+                    1. About Velocrosshairs
                 </h2>
-                
-                <h3 class="subsection-title">Interpretation</h3>
-                <p>
-                    The words with capitalized initial letters have meanings defined under the following conditions. 
-                    These definitions shall have the same meaning regardless of whether they appear in singular or plural form.
-                </p>
-
-                <h3 class="subsection-title">Definitions</h3>
-                <p>For the purposes of this Privacy Policy:</p>
-
-                <div class="definition-list">
-                    <div class="definition-item">
-                        <div class="definition-term">Account</div>
-                        <div class="definition-desc">
-                            A unique account created for you to access our Service or parts of our Service.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Affiliate</div>
-                        <div class="definition-desc">
-                            An entity that controls, is controlled by, or is under common control with a party, where "control" 
-                            means ownership of 50% or more of the shares, equity interest, or other securities entitled to vote 
-                            for election of directors or other managing authority.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Company</div>
-                        <div class="definition-desc">
-                            Refers to Velo Crosshairs (referred to as either "the Company", "We", "Us" or "Our" in this Agreement).
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Cookies</div>
-                        <div class="definition-desc">
-                            Small files placed on your computer, mobile device, or any other device by a website, containing 
-                            details of your browsing history on that website among its many uses.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Country</div>
-                        <div class="definition-desc">
-                            Refers to Wyoming, United States.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Device</div>
-                        <div class="definition-desc">
-                            Any device that can access the Service such as a computer, cell phone, or digital tablet.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Personal Data</div>
-                        <div class="definition-desc">
-                            Any information that relates to an identified or identifiable individual.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Service</div>
-                        <div class="definition-desc">
-                            Refers to the Website.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Service Provider</div>
-                        <div class="definition-desc">
-                            Any natural or legal person who processes data on behalf of the Company to facilitate the Service, 
-                            provide the Service on behalf of the Company, perform services related to the Service, or assist 
-                            the Company in analyzing how the Service is used.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Usage Data</div>
-                        <div class="definition-desc">
-                            Data collected automatically, either generated by the use of the Service or from the Service 
-                            infrastructure itself (for example, the duration of a page visit).
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Website</div>
-                        <div class="definition-desc">
-                            Refers to Velo Crosshairs, accessible from <a href="https://velocrosshairs.com/" style="color: var(--primary-pink);">https://velocrosshairs.com/</a>
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">You</div>
-                        <div class="definition-desc">
-                            The individual accessing or using the Service, or the company or other legal entity on behalf of 
-                            which such individual is accessing or using the Service.
-                        </div>
-                    </div>
-                </div>
+                <p>Velocrosshairs is a free online resource for Valorant players. Our website provides a database of Valorant crosshair codes, including pro player crosshairs, popular styles, and clean presets that players can copy and import into the game.</p>
+                <p>We also publish guides about crosshair styles, colors, settings, and how to import crosshair codes into Valorant.</p>
+                <p>Our goal is to help players find a crosshair that gives them clarity, stability, and confidence in every fight, whether they are beginners, ranked players, or experienced competitors.</p>
             </div>
 
-            <!-- Collecting and Using Your Personal Data -->
-            <div id="collecting-data" class="policy-section">
+            <!-- 2. Information We Collect -->
+            <div id="information-we-collect" class="policy-section">
                 <h2 class="section-title">
                     <i class="fas fa-database"></i>
-                    Collecting and Using Your Personal Data
+                    2. Information We Collect
                 </h2>
-
-                <h3 class="subsection-title">Types of Data Collected</h3>
-
-                <h4 style="color: var(--primary-pink); margin: 1.5rem 0 0.75rem; font-weight: 600;">Personal Data</h4>
-                <p>
-                    While using our Service, we may ask you to provide us with certain personally identifiable information 
-                    that can be used to contact or identify you. This may include, but is not limited to:
-                </p>
+                <p>You can browse Velocrosshairs, explore the crosshair database, and copy crosshair codes without creating an account or providing personal information.</p>
+                <p>However, certain technical information may be collected automatically when you visit our website. This information may include:</p>
                 <ul>
-                    <li>Email address</li>
-                    <li>First name and last name</li>
-                    <li>Usage Data</li>
+                    <li>IP address</li>
+                    <li>Browser type</li>
+                    <li>Device type</li>
+                    <li>Operating system</li>
+                    <li>Approximate geographic location</li>
+                    <li>Pages visited, such as crosshair pages and guides</li>
+                    <li>Time and date of your visit</li>
+                    <li>Referring website</li>
+                    <li>General information about website usage</li>
                 </ul>
-
-                <h4 style="color: var(--primary-pink); margin: 1.5rem 0 0.75rem; font-weight: 600;">Usage Data</h4>
-                <p>Usage Data is collected automatically when using the Service.</p>
-                <p>
-                    Usage Data may include information such as your Device's Internet Protocol address (IP address), 
-                    browser type, browser version, the pages of our Service that you visit, the time and date of your 
-                    visit, time spent on pages, unique device identifiers, and other diagnostic data.
-                </p>
-                <p>
-                    When you access the Service through a mobile device, we may collect certain information automatically, 
-                    including the type of mobile device, your mobile device's unique ID, IP address, mobile operating system, 
-                    mobile Internet browser type, and other diagnostic data.
-                </p>
-
-                <h3 class="subsection-title">Tracking Technologies and Cookies</h3>
-                <p>
-                    We use Cookies and similar tracking technologies to track activity on our Service and store certain 
-                    information. Technologies we use include:
-                </p>
-                <ul>
-                    <li>
-                        <strong>Cookies or Browser Cookies:</strong> A cookie is a small file placed on your Device. You can 
-                        instruct your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if 
-                        you do not accept Cookies, you may not be able to use some parts of our Service.
-                    </li>
-                    <li>
-                        <strong>Web Beacons:</strong> Certain sections of our Service and emails may contain small electronic 
-                        files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that 
-                        permit the Company to count users who have visited pages or opened emails and for other related website 
-                        statistics.
-                    </li>
-                </ul>
-
-                <div class="definition-list" style="margin-top: 1.5rem;">
-                    <div class="definition-item">
-                        <div class="definition-term">Necessary / Essential Cookies</div>
-                        <div class="definition-desc">
-                            <strong>Type:</strong> Session Cookies<br>
-                            <strong>Purpose:</strong> Essential to provide you with services available through the Website and 
-                            enable you to use some of its features. They help authenticate users and prevent fraudulent use of 
-                            user accounts.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Cookies Policy / Notice Acceptance Cookies</div>
-                        <div class="definition-desc">
-                            <strong>Type:</strong> Persistent Cookies<br>
-                            <strong>Purpose:</strong> Identify if users have accepted the use of cookies on the Website.
-                        </div>
-                    </div>
-
-                    <div class="definition-item">
-                        <div class="definition-term">Functionality Cookies</div>
-                        <div class="definition-desc">
-                            <strong>Type:</strong> Persistent Cookies<br>
-                            <strong>Purpose:</strong> Allow us to remember choices you make when you use the Website, such as 
-                            remembering your login details or language preference, to provide you with a more personal experience.
-                        </div>
-                    </div>
-                </div>
+                <p>This information may be collected through standard web technologies and third-party services. We use it mainly to understand how our website is used, improve performance, maintain security, and provide a better experience for players.</p>
             </div>
 
-            <!-- Use of Your Personal Data -->
-            <div id="use-of-data" class="policy-section">
+            <!-- 3. Crosshair Codes and the Copy Feature -->
+            <div id="crosshair-codes" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-copy"></i>
+                    3. Crosshair Codes and the Copy Feature
+                </h2>
+                <p>Velocrosshairs allows users to copy crosshair codes with a "Copy Code" button so they can paste them into Valorant using the "Import Profile Code" option.</p>
+                <p>Copying a crosshair code happens in your browser. We do not collect or store the contents of your clipboard, and we do not access your Riot Games account or your in-game settings.</p>
+                <p>We may record general, non-personal usage information, such as how often a crosshair is viewed or copied, to understand which crosshairs are most popular and to improve our database.</p>
+                <p>Your browser may temporarily store information through features such as cache, clipboard history, or local storage. We recommend that you never share your Riot Games login details, passwords, or other sensitive information on any crosshair website, including ours.</p>
+            </div>
+
+            <!-- 4. Cookies -->
+            <div id="cookies" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-cookie"></i>
+                    4. Cookies
+                </h2>
+                <p>Velocrosshairs may use cookies and similar technologies to improve website functionality, understand visitor activity, analyze traffic, and support advertising.</p>
+                <p>Cookies are small files that websites may store on your device when you visit them.</p>
+                <p>Cookies may be used to:</p>
+                <ul>
+                    <li>Improve website functionality</li>
+                    <li>Remember certain preferences, such as your cookie consent choice</li>
+                    <li>Understand how visitors use our crosshair database and guides</li>
+                    <li>Analyze website traffic</li>
+                    <li>Measure advertising performance</li>
+                    <li>Support relevant advertising</li>
+                </ul>
+                <p>You can manage or disable cookies through your browser settings. However, disabling cookies may affect how certain websites or features work.</p>
+            </div>
+
+            <!-- 5. Google AdSense and Advertising -->
+            <div id="google-adsense" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-ad"></i>
+                    5. Google AdSense and Advertising
+                </h2>
+                <p>Velocrosshairs may display advertisements through Google AdSense or other third-party advertising providers. Advertising helps us keep the crosshair database and guides free for all players.</p>
+                <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites on the internet.</p>
+                <p>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visits to Velocrosshairs and/or other sites on the internet.</p>
+                <p>You can opt out of personalized advertising by visiting Google Ads Settings. You can also opt out of some third-party vendors' use of cookies for personalized advertising by visiting www.aboutads.info.</p>
+                <p>To learn more about how Google uses information from sites that use its services, please visit How Google uses information from sites or apps that use our services.</p>
+                <p>If you visit our website from the European Economic Area, the United Kingdom, or Switzerland, we may ask for your consent before personalized ads or certain cookies are used. If you do not give consent, you may see non-personalized ads instead.</p>
+                <p>Because third-party advertising providers operate independently, their use of information is governed by their own privacy policies and terms.</p>
+            </div>
+
+            <!-- 6. Third-Party Services -->
+            <div id="third-party-services" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-plug"></i>
+                    6. Third-Party Services
+                </h2>
+                <p>We may use third-party services to help operate, analyze, secure, and improve Velocrosshairs.</p>
+                <p>These services may include:</p>
+                <ul>
+                    <li>Website analytics providers</li>
+                    <li>Advertising networks</li>
+                    <li>Hosting providers</li>
+                    <li>Security services</li>
+                    <li>Content delivery services</li>
+                </ul>
+                <p>Third-party services may collect certain technical or usage information in accordance with their own privacy policies.</p>
+                <p>We recommend reviewing the privacy policies of these third-party services for more information about how they collect and process data.</p>
+            </div>
+
+            <!-- 7. Analytics -->
+            <div id="analytics" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    7. Analytics
+                </h2>
+                <p>Velocrosshairs may use analytics services, such as Google Analytics, to understand how visitors interact with our website.</p>
+                <p>Analytics services may collect information such as:</p>
+                <ul>
+                    <li>Pages visited</li>
+                    <li>Time spent on pages</li>
+                    <li>Crosshairs viewed or copied</li>
+                    <li>Device information</li>
+                    <li>Browser information</li>
+                    <li>Approximate geographic information</li>
+                    <li>General usage patterns</li>
+                </ul>
+                <p>We use this information to improve our crosshair database and guides, identify technical issues, understand visitor behavior, and enhance the overall user experience.</p>
+            </div>
+
+            <!-- 8. How We Use Information -->
+            <div id="how-we-use-information" class="policy-section">
                 <h2 class="section-title">
                     <i class="fas fa-tasks"></i>
-                    Use of Your Personal Data
+                    8. How We Use Information
                 </h2>
-                <p>The Company may use Personal Data for the following purposes:</p>
+                <p>Information collected through Velocrosshairs may be used for the following purposes:</p>
                 <ul>
-                    <li>
-                        <strong>To provide and maintain our Service:</strong> Including monitoring the usage of our Service.
-                    </li>
-                    <li>
-                        <strong>To manage your Account:</strong> To manage your registration as a user of the Service and give 
-                        you access to different functionalities.
-                    </li>
-                    <li>
-                        <strong>For contract performance:</strong> The development, compliance, and undertaking of purchase 
-                        contracts for products, items, or services you have purchased.
-                    </li>
-                    <li>
-                        <strong>To contact you:</strong> By email, telephone calls, SMS, or other equivalent forms of electronic 
-                        communication regarding updates or informative communications related to functionalities, products, or 
-                        contracted services.
-                    </li>
-                    <li>
-                        <strong>To provide you with news and offers:</strong> General information about other goods, services, 
-                        and events which we offer that are similar to those you have already purchased or inquired about, unless 
-                        you have opted not to receive such information.
-                    </li>
-                    <li>
-                        <strong>To manage your requests:</strong> To attend and manage your requests to us.
-                    </li>
-                    <li>
-                        <strong>For business transfers:</strong> We may use your information to evaluate or conduct a merger, 
-                        divestiture, restructuring, reorganization, dissolution, or other sale or transfer of assets.
-                    </li>
-                    <li>
-                        <strong>For other purposes:</strong> Such as data analysis, identifying usage trends, determining the 
-                        effectiveness of promotional campaigns, and evaluating and improving our Service, products, services, 
-                        marketing, and your experience.
-                    </li>
+                    <li>To operate and maintain our website</li>
+                    <li>To improve our crosshair database and import tools</li>
+                    <li>To understand which crosshairs and guides players find most useful</li>
+                    <li>To improve website performance</li>
+                    <li>To understand visitor behavior</li>
+                    <li>To analyze website traffic</li>
+                    <li>To detect technical problems</li>
+                    <li>To protect our website against misuse and security threats</li>
+                    <li>To measure advertising performance</li>
+                    <li>To comply with applicable laws and legal obligations</li>
                 </ul>
+                <p>We do not sell personal information as part of our ordinary website operations.</p>
             </div>
 
-            <!-- Sharing Your Personal Information -->
-            <div id="sharing-data" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-share-alt"></i>
-                    Sharing Your Personal Information
-                </h2>
-                <p>We may share your personal information in the following situations:</p>
-                <ul>
-                    <li>
-                        <strong>With Service Providers:</strong> To monitor and analyze the use of our Service and to contact you.
-                    </li>
-                    <li>
-                        <strong>For business transfers:</strong> In connection with or during negotiations of any merger, sale of 
-                        Company assets, financing, or acquisition.
-                    </li>
-                    <li>
-                        <strong>With Affiliates:</strong> We may share your information with our affiliates, requiring them to 
-                        honor this Privacy Policy.
-                    </li>
-                    <li>
-                        <strong>With business partners:</strong> To offer you certain products, services, or promotions.
-                    </li>
-                    <li>
-                        <strong>With other users:</strong> When you share personal information or interact in public areas, such 
-                        information may be viewed by all users and publicly distributed.
-                    </li>
-                    <li>
-                        <strong>With your consent:</strong> We may disclose your personal information for any other purpose with 
-                        your consent.
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Retention of Your Personal Data -->
-            <div id="retention" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-clock"></i>
-                    Retention of Your Personal Data
-                </h2>
-                <p>
-                    The Company will retain your Personal Data only for as long as necessary for the purposes set out in this 
-                    Privacy Policy. We will retain and use your Personal Data to comply with legal obligations, resolve disputes, 
-                    and enforce our agreements and policies.
-                </p>
-                <p>
-                    Usage Data is generally retained for a shorter period, except when used to strengthen security, improve 
-                    functionality, or when legally obligated to retain it longer.
-                </p>
-            </div>
-
-            <!-- Transfer of Your Personal Data -->
-            <div id="transfer" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-exchange-alt"></i>
-                    Transfer of Your Personal Data
-                </h2>
-                <p>
-                    Your information, including Personal Data, is processed at the Company's operating offices and in any other 
-                    places where parties involved in processing are located. This means information may be transferred to and 
-                    maintained on computers located outside of your state, province, country, or other governmental jurisdiction 
-                    where data protection laws may differ.
-                </p>
-                <p>
-                    Your consent to this Privacy Policy followed by your submission of such information represents your agreement 
-                    to that transfer.
-                </p>
-                <p>
-                    The Company will take all steps reasonably necessary to ensure your data is treated securely and in accordance 
-                    with this Privacy Policy. No transfer of your Personal Data will take place unless there are adequate controls 
-                    in place including the security of your data.
-                </p>
-            </div>
-
-            <!-- Delete Your Personal Data -->
-            <div id="delete" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-trash-alt"></i>
-                    Delete Your Personal Data
-                </h2>
-                <p>
-                    You have the right to delete or request that we assist in deleting the Personal Data we have collected about you.
-                </p>
-                <p>
-                    Our Service may give you the ability to delete certain information about you from within the Service. You may 
-                    update, amend, or delete your information at any time by signing in to your Account (if you have one) and 
-                    visiting the account settings section. You may also contact us to request access to, correct, or delete any 
-                    personal information you have provided.
-                </p>
-                <p>
-                    Please note that we may need to retain certain information when we have a legal obligation or lawful basis to do so.
-                </p>
-            </div>
-
-            <!-- Disclosure of Your Personal Data -->
-            <div id="disclosure" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-file-alt"></i>
-                    Disclosure of Your Personal Data
-                </h2>
-
-                <h3 class="subsection-title">Business Transactions</h3>
-                <p>
-                    If the Company is involved in a merger, acquisition, or asset sale, your Personal Data may be transferred. 
-                    We will provide notice before your Personal Data is transferred and becomes subject to a different Privacy Policy.
-                </p>
-
-                <h3 class="subsection-title">Law Enforcement</h3>
-                <p>
-                    Under certain circumstances, the Company may be required to disclose your Personal Data if required to do so 
-                    by law or in response to valid requests by public authorities (e.g., a court or government agency).
-                </p>
-
-                <h3 class="subsection-title">Other Legal Requirements</h3>
-                <p>The Company may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
-                <ul>
-                    <li>Comply with a legal obligation</li>
-                    <li>Protect and defend the rights or property of the Company</li>
-                    <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-                    <li>Protect the personal safety of users of the Service or the public</li>
-                    <li>Protect against legal liability</li>
-                </ul>
-            </div>
-
-            <!-- Security of Your Personal Data -->
-            <div id="security" class="policy-section">
-                <h2 class="section-title">
-                    <i class="fas fa-shield-alt"></i>
-                    Security of Your Personal Data
-                </h2>
-                <p>
-                    The security of your Personal Data is important to us, but remember that no method of transmission over the 
-                    Internet or method of electronic storage is 100% secure. While we strive to use commercially reasonable means 
-                    to protect your Personal Data, we cannot guarantee its absolute security.
-                </p>
-            </div>
-
-            <!-- Children's Privacy -->
-            <div id="children" class="policy-section">
+            <!-- 9. Children's Privacy -->
+            <div id="childrens-privacy" class="policy-section">
                 <h2 class="section-title">
                     <i class="fas fa-child"></i>
-                    Children's Privacy
+                    9. Children's Privacy
                 </h2>
-                <p>
-                    Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable 
-                    information from anyone under 13. If you are a parent or guardian and you are aware that your child has provided 
-                    us with Personal Data, please contact us.
-                </p>
-                <p>
-                    If we become aware that we have collected Personal Data from anyone under 13 without verification of parental 
-                    consent, we take steps to remove that information from our servers.
-                </p>
-                <p>
-                    If we need to rely on consent as a legal basis for processing your information and your country requires consent 
-                    from a parent, we may require your parent's consent before we collect and use that information.
-                </p>
+                <p>Velocrosshairs is not specifically intended for children under the age of 13.</p>
+                <p>We do not knowingly collect personal information from children under 13 years of age.</p>
+                <p>If you believe that a child has provided personal information through our website, please contact us. If we become aware of such information being collected, we will take reasonable steps to remove it where required by applicable law.</p>
             </div>
 
-            <!-- Links to Other Websites -->
-            <div id="links" class="policy-section">
+            <!-- 10. Data Security -->
+            <div id="data-security" class="policy-section">
                 <h2 class="section-title">
-                    <i class="fas fa-link"></i>
-                    Links to Other Websites
+                    <i class="fas fa-shield-alt"></i>
+                    10. Data Security
                 </h2>
-                <p>
-                    Our Service may contain links to other websites that are not operated by us. If you click on a third-party link, 
-                    you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every 
-                    site you visit.
-                </p>
-                <p>
-                    We have no control over and assume no responsibility for the content, privacy policies, or practices of any 
-                    third-party sites or services.
-                </p>
+                <p>We take reasonable measures to protect information associated with our website.</p>
+                <p>However, no method of transmitting information over the internet or storing information electronically is completely secure.</p>
+                <p>For this reason, we cannot guarantee that information transmitted to or through our website will always remain completely secure.</p>
             </div>
 
-            <!-- Changes to This Privacy Policy -->
-            <div id="changes" class="policy-section">
+            <!-- 11. External Links and Riot Games -->
+            <div id="external-links" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-external-link-alt"></i>
+                    11. External Links and Riot Games
+                </h2>
+                <p>Velocrosshairs may sometimes contain links to third-party websites or services, such as esports sites, player profiles, or official game pages.</p>
+                <p>We do not control and are not responsible for the privacy practices, security, content, or policies of external websites.</p>
+                <p>When you visit an external website through a link on our website, we recommend reviewing its privacy policy before providing any personal information.</p>
+                <p>Velocrosshairs is an independent fan website. It is not endorsed by, affiliated with, or sponsored by Riot Games. Valorant and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Any information you share with Riot Games, including through the Valorant game client, is governed by Riot Games' own privacy policy.</p>
+            </div>
+
+            <!-- 12. Your Privacy Rights -->
+            <div id="your-privacy-rights" class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-shield"></i>
+                    12. Your Privacy Rights
+                </h2>
+                <p>Depending on your location and applicable privacy laws, such as the GDPR in Europe or the CCPA in California, you may have certain rights regarding your personal information.</p>
+                <p>These rights may include:</p>
+                <ul>
+                    <li>Requesting information about personal data collected about you</li>
+                    <li>Requesting correction of inaccurate information</li>
+                    <li>Requesting deletion of certain personal information</li>
+                    <li>Objecting to certain data processing activities</li>
+                    <li>Requesting restrictions on certain types of processing</li>
+                    <li>Withdrawing consent you previously gave</li>
+                    <li>Managing cookie preferences</li>
+                    <li>Managing certain personalized advertising choices</li>
+                </ul>
+                <p>These rights may vary depending on applicable laws and circumstances.</p>
+                <p>If you would like to make a privacy-related request, please contact us using the email address provided below.</p>
+            </div>
+
+            <!-- 13. Changes to This Privacy Policy -->
+            <div id="changes-to-policy" class="policy-section">
                 <h2 class="section-title">
                     <i class="fas fa-edit"></i>
-                    Changes to This Privacy Policy
+                    13. Changes to This Privacy Policy
                 </h2>
-                <p>
-                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new 
-                    Privacy Policy on this page and updating the "Last updated" date at the top of this Privacy Policy.
-                </p>
-                <p>
-                    We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective.
-                </p>
-                <p>
-                    You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are 
-                    effective when they are posted on this page.
-                </p>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our website, services, technology, or applicable legal requirements.</p>
+                <p>Whenever this policy is updated, we will revise the Last Updated date shown at the beginning of this page.</p>
+                <p>We encourage you to review this Privacy Policy periodically to stay informed about how we handle information.</p>
             </div>
 
-            <!-- Contact Us -->
+            <!-- 14. Contact Us -->
             <div id="contact" class="contact-section">
-                <h3>Questions About This Privacy Policy?</h3>
-                <p>
-                    If you have any questions about this Privacy Policy, please don't hesitate to contact us.
-                </p>
-                <a href="mailto:contact@velocrosshairs.com" class="contact-email">
+                <h3>14. Contact Us</h3>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us.</p>
+                <a href="mailto:velocrosshairs@gmail.com" class="contact-email">
                     <i class="fas fa-envelope"></i>
-                    contact
+                    velocrosshairs@gmail.com
                 </a>
+            </div>
+
+            <!-- 15. Consent -->
+            <div id="consent" class="policy-section" style="margin-top: 3rem;">
+                <h2 class="section-title">
+                    <i class="fas fa-check-circle"></i>
+                    15. Consent
+                </h2>
+                <p>By using Velocrosshairs, you acknowledge that you have read and understood this Privacy Policy and agree to the practices described here.</p>
+                <p>If you do not agree with this Privacy Policy, please discontinue using our website.</p>
+                <p>Thank you for using Velocrosshairs. Good luck in your next match!</p>
             </div>
 
         </div>

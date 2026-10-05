@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CrossChair;
 use App\Models\Category;
+use App\Models\Blog;
 use Illuminate\Http\Response;
 
 class SitemapController extends Controller
@@ -12,6 +13,7 @@ class SitemapController extends Controller
     {
         $categories = Category::where('is_active', true)->get();
         $crosshairs = CrossChair::where('is_active', true)->get();
+        $blogs = Blog::where('status', 'published')->get();
 
         $sitemap = '<?xml version="1.0" encoding="UTF-8"?>';
         $sitemap .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
@@ -28,6 +30,9 @@ class SitemapController extends Controller
             ['url' => '/crosshairs', 'freq' => 'daily', 'priority' => '0.9'],
             ['url' => '/about-us', 'freq' => 'monthly', 'priority' => '0.7'],
             ['url' => '/contact', 'freq' => 'monthly', 'priority' => '0.7'],
+            ['url' => '/disclaimer', 'freq' => 'yearly', 'priority' => '0.5'],
+            ['url' => '/advertisement-policy', 'freq' => 'yearly', 'priority' => '0.5'],
+            ['url' => '/blogs', 'freq' => 'daily', 'priority' => '0.9'],
             ['url' => '/privacy-policy', 'freq' => 'yearly', 'priority' => '0.5'],
             ['url' => '/login', 'freq' => 'monthly', 'priority' => '0.6'],
             ['url' => '/register', 'freq' => 'monthly', 'priority' => '0.6'],
@@ -56,6 +61,15 @@ class SitemapController extends Controller
             $sitemap .= '<loc>https://velocrosshairs.com/crosshairs/' . $crosshair->slug . '</loc>';
             $sitemap .= '<changefreq>monthly</changefreq>';
             $sitemap .= '<priority>0.7</priority>';
+            $sitemap .= '</url>';
+        }
+
+        // Blogs
+        foreach ($blogs as $blog) {
+            $sitemap .= '<url>';
+            $sitemap .= '<loc>https://velocrosshairs.com/blogs/' . $blog->slug . '</loc>';
+            $sitemap .= '<changefreq>weekly</changefreq>';
+            $sitemap .= '<priority>0.8</priority>';
             $sitemap .= '</url>';
         }
 

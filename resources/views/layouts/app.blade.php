@@ -632,7 +632,9 @@
                     <li><a href="{{ route('about-us') }}">About Us</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     <li><a href="{{ route('Privacy-Policy') }}">Privacy Policy</a></li>
-                    
+                    <li><a href="{{ route('Terms-And-Conditions') }}">Terms & Conditions</a></li>
+                    <li><a href="{{ route('Disclaimer') }}">Disclaimer</a></li>
+                    <li><a href="{{ route('Advertisement-Policy') }}">Advertisement Policy</a></li>
                 </ul>
             </div>
 

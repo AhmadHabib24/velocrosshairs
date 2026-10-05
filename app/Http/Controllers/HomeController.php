@@ -154,6 +154,21 @@ class HomeController extends Controller
     {
         return view('user.PrivacyPolicy.index');
     }
+
+    public function TermsAndConditions()
+    {
+        return view('user.TermsAndConditions.index');
+    }
+
+    public function Disclaimer()
+    {
+        return view('user.Disclaimer.index');
+    }
+
+    public function AdvertisementPolicy()
+    {
+        return view('user.AdvertisementPolicy.index');
+    }
     
     
 }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="pytzcoDkZoK3ZAyigYcbZaWU_NeXV11YztLRB9Td2pI" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2104099966114675"
+         crossorigin="anonymous"></script>
     <title>@yield('title', 'Velocrosshairs - Professional Gaming Crosshairs')</title>
     <meta name="description"
         content="@yield('description', 'Download professional gaming crosshairs, create custom crosshair overlays, and improve your aim with our advanced crosshair technology.')">

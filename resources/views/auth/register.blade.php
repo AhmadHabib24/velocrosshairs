@@ -195,6 +195,8 @@
                            autocomplete="new-password"
                            placeholder="Confirm your password">
                 </div>
+
+                @include('auth.partials.math-captcha')
                 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary">

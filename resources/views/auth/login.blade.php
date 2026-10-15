@@ -179,6 +179,8 @@
                     @enderror
                 </div>
                 
+                @include('auth.partials.math-captcha')
+
                 <div class="mb-4">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

@@ -10,23 +10,56 @@ use Illuminate\Support\Str;
 
 class CrossChairController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $activeCrosschairs = CrossChair::with('category')
-            ->where('is_active', true)
+        $categoryId = $request->input('category_id');
+        $search = trim((string) $request->input('search', ''));
+
+        $applyFilters = function ($query) use ($categoryId, $search) {
+            if ($categoryId) {
+                $query->where('category_id', $categoryId);
+            }
+
+            if ($search !== '') {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', '%' . $search . '%')
+                        ->orWhere('slug', 'like', '%' . $search . '%')
+                        ->orWhere('crosshair_code', 'like', '%' . $search . '%');
+
+                    if (ctype_digit($search)) {
+                        $q->orWhere('id', (int) $search);
+                    }
+                });
+            }
+
+            return $query;
+        };
+
+        $activeCrosschairs = $applyFilters(
+            CrossChair::with('category')->where('is_active', true)
+        )
             ->orderBy('order', 'asc')
             ->orderBy('created_at', 'desc')
-            ->paginate(15, ['*'], 'active_page');
-        
-        $inactiveCrosschairs = CrossChair::with('category')
-            ->where('is_active', false)
+            ->paginate(15, ['*'], 'active_page')
+            ->withQueryString();
+
+        $inactiveCrosschairs = $applyFilters(
+            CrossChair::with('category')->where('is_active', false)
+        )
             ->orderBy('order', 'asc')
             ->orderBy('created_at', 'desc')
-            ->paginate(15, ['*'], 'inactive_page');
-        
+            ->paginate(15, ['*'], 'inactive_page')
+            ->withQueryString();
+
         $categories = Category::active()->ordered()->get();
-        
-        return view('admin.crosschair.index', compact('activeCrosschairs', 'inactiveCrosschairs', 'categories'));
+
+        return view('admin.crosschair.index', compact(
+            'activeCrosschairs',
+            'inactiveCrosschairs',
+            'categories',
+            'categoryId',
+            'search'
+        ));
     }
 
     public function store(Request $request)

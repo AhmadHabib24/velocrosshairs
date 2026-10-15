@@ -415,6 +415,44 @@
         border-color: var(--primary-pink);
     }
 
+    .filters-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: flex-end;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: rgba(255, 45, 95, 0.05);
+        border: 1px solid var(--dark-border);
+        border-radius: 10px;
+    }
+
+    .filter-group {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .filter-group.search-group {
+        flex: 2;
+        min-width: 260px;
+    }
+
+    .filter-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
 </style>
 
 @if(session('success'))
@@ -443,6 +481,42 @@
             <span class="count">{{ $inactiveCrosschairs->total() }}</span>
         </button>
     </div>
+
+    <form method="GET" action="{{ route('admin.CrossChair.index') }}" class="filters-bar" id="crosschairFiltersForm">
+        <input type="hidden" name="tab" id="filterTab" value="{{ request('tab', 'active') }}">
+
+        <div class="filter-group">
+            <label class="filter-label" for="category_id">Category</label>
+            <select name="category_id" id="category_id" class="form-control" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ (string) ($categoryId ?? '') === (string) $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="filter-group search-group">
+            <label class="filter-label" for="search">Search</label>
+            <input type="text"
+                   name="search"
+                   id="search"
+                   class="form-control"
+                   value="{{ $search ?? '' }}"
+                   placeholder="Type to search by name, slug, code, or ID"
+                   autocomplete="off">
+        </div>
+
+        <div class="filter-actions">
+            @if(($categoryId ?? '') || ($search ?? ''))
+                <a href="{{ route('admin.CrossChair.index') }}" class="btn" style="background: var(--dark-bg); color: var(--text-secondary);">
+                    <i class="fas fa-times"></i>
+                    Clear
+                </a>
+            @endif
+        </div>
+    </form>
     
     <div class="tab-content active" id="activeContent">
         <div class="table-responsive">
@@ -538,7 +612,7 @@
         </div>
         
         <div class="pagination">
-            {{ $activeCrosschairs->appends(['inactive_page' => request('inactive_page')])->links('vendor.pagination.custom') }}
+            {{ $activeCrosschairs->links('vendor.pagination.custom') }}
         </div>
     </div>
     
@@ -636,7 +710,7 @@
         </div>
         
         <div class="pagination">
-            {{ $inactiveCrosschairs->appends(['active_page' => request('active_page')])->links('vendor.pagination.custom') }}
+            {{ $inactiveCrosschairs->links('vendor.pagination.custom') }}
         </div>
     </div>
 </div>
@@ -879,6 +953,11 @@
         const inactiveTab = document.getElementById('inactiveTab');
         const activeContent = document.getElementById('activeContent');
         const inactiveContent = document.getElementById('inactiveContent');
+        const filterTab = document.getElementById('filterTab');
+
+        if (filterTab) {
+            filterTab.value = tab;
+        }
         
         if (tab === 'active') {
             activeTab.classList.add('active');
@@ -913,6 +992,37 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
+        const initialTab = @json(request('tab', 'active'));
+        if (initialTab === 'inactive') {
+            switchTab('inactive');
+        }
+
+        const searchInput = document.getElementById('search');
+        const filtersForm = document.getElementById('crosschairFiltersForm');
+        const initialSearch = @json($search ?? '');
+        let searchDebounceTimer = null;
+
+        if (searchInput && filtersForm) {
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchDebounceTimer);
+                searchDebounceTimer = setTimeout(function() {
+                    const value = searchInput.value.trim();
+                    if (value === initialSearch) {
+                        return;
+                    }
+                    filtersForm.submit();
+                }, 400);
+            });
+
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    clearTimeout(searchDebounceTimer);
+                    filtersForm.submit();
+                }
+            });
+        }
+
         updateCharCounter('add_meta_title', 'add_meta_title_count', 60);
         updateCharCounter('add_meta_description', 'add_meta_desc_count', 160);
         updateCharCounter('edit_meta_title', 'edit_meta_title_count', 60);

@@ -27,6 +27,13 @@ class AppServiceProvider extends ServiceProvider
             $view->with('navCategories', $categories);
         });
 
+        View::composer(['auth.login', 'auth.register'], function ($view) {
+            $num1 = random_int(1, 10);
+            $num2 = random_int(1, 10);
+            session(['captcha_answer' => $num1 + $num2]);
+            $view->with(compact('num1', 'num2'));
+        });
+
         \Illuminate\Pagination\Paginator::defaultView('vendor.pagination.custom');
     }
 }

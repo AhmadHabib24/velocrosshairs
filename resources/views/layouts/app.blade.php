@@ -381,13 +381,24 @@
             transition: all 0.25s ease;
             text-decoration: none;
         }
+
+        .footer-social i {
+            color: inherit;
+            line-height: 1;
+        }
         
-        .footer-social:hover{
+        .footer-section .footer-social:hover,
+        .footer-section .footer-social:focus-visible {
             background: var(--primary-pink);
-            color: white;
+            color: #fff;
             border-color: var(--primary-pink);
             transform: translateY(-2px);
             box-shadow: var(--glow-pink);
+        }
+
+        .footer-section .footer-social:hover i,
+        .footer-section .footer-social:focus-visible i {
+            color: #fff;
         }
 
 

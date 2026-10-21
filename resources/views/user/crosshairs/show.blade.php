@@ -1018,15 +1018,97 @@ if (copySettingsBtn) {
     });
 }
 
-// Copy code
+function copyTextToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+    }
+
+    return new Promise((resolve, reject) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try {
+            document.execCommand('copy');
+            resolve();
+        } catch (error) {
+            reject(error);
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    });
+}
+
+function getCrosshairCodeFromPage() {
+    const codeElement = document.getElementById('crosshair-code');
+    return codeElement ? codeElement.textContent.trim() : '';
+}
+
+function copyCrosshairWithTracking(btn, crosshairId, loadingLabel) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${loadingLabel}`;
+    btn.disabled = true;
+
+    fetch(`/crosshairs/${crosshairId}/copy`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'Accept': 'application/json',
+        },
+    })
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error('Copy request failed');
+            }
+            return res.json();
+        })
+        .then((data) => {
+            const code = (data.code || getCrosshairCodeFromPage()).trim();
+            if (!data.success || !code) {
+                throw new Error('Missing crosshair code');
+            }
+
+            return copyTextToClipboard(code).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                const copiesElement = document.getElementById('copies-count');
+                if (copiesElement && data.copies !== undefined) {
+                    copiesElement.textContent = Number(data.copies).toLocaleString();
+                }
+            });
+        })
+        .catch(() => {
+            btn.innerHTML = '<i class="fas fa-times"></i> Error';
+        })
+        .finally(() => {
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 2000);
+        });
+}
+
+// Copy code (sidebar)
 const copyCodeBtn = document.querySelector('.copy-code-btn');
 if (copyCodeBtn) {
     copyCodeBtn.addEventListener('click', function() {
-        const code = document.getElementById('crosshair-code').textContent;
-        navigator.clipboard.writeText(code).then(() => {
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-check"></i> Copied!';
-            setTimeout(() => this.innerHTML = originalText, 2000);
+        const btn = this;
+        const code = getCrosshairCodeFromPage();
+        if (!code) {
+            alert('Failed to copy code');
+            return;
+        }
+
+        copyTextToClipboard(code).then(() => {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 2000);
         }).catch(() => alert('Failed to copy code'));
     });
 }
@@ -1035,41 +1117,7 @@ if (copyCodeBtn) {
 const modalCopyCodeBtn = document.querySelector('.modal-copy-code-btn');
 if (modalCopyCodeBtn) {
     modalCopyCodeBtn.addEventListener('click', function() {
-        const btn = this;
-        const crosshairId = btn.getAttribute('data-crosshair-id');
-        const originalText = btn.innerHTML;
-
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Copying...';
-        btn.disabled = true;
-
-        fetch(`/crosshairs/${crosshairId}/copy`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                const copiesElement = document.getElementById('copies-count');
-                if (copiesElement && data.copies) {
-                    copiesElement.textContent = data.copies.toLocaleString();
-                }
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                }, 2000);
-            }
-        })
-        .catch(() => {
-            btn.innerHTML = '<i class="fas fa-times"></i> Error';
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 2000);
-        });
+        copyCrosshairWithTracking(this, this.getAttribute('data-crosshair-id'), 'Copying...');
     });
 }
 
@@ -1077,41 +1125,7 @@ if (modalCopyCodeBtn) {
 const downloadBtn = document.querySelector('.download-btn');
 if (downloadBtn) {
     downloadBtn.addEventListener('click', function() {
-        const btn = this;
-        const crosshairId = btn.getAttribute('data-crosshair-id');
-        const originalText = btn.innerHTML;
-
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-        btn.disabled = true;
-
-        fetch(`/crosshairs/${crosshairId}/copy`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                const copiesElement = document.getElementById('copies-count');
-                if (copiesElement && data.copies) {
-                    copiesElement.textContent = data.copies.toLocaleString();
-                }
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                }, 2000);
-            }
-        })
-        .catch(() => {
-            btn.innerHTML = '<i class="fas fa-times"></i> Error';
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 2000);
-        });
+        copyCrosshairWithTracking(this, this.getAttribute('data-crosshair-id'), 'Processing...');
     });
 }
 

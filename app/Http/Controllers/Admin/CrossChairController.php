@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CrossChair;
 use App\Models\Category;
+use App\Support\CrosshairDescriptionGuard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class CrossChairController extends Controller
 {
@@ -75,8 +77,11 @@ class CrossChairController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
             'meta_keywords' => 'nullable|string',
-            'is_active' => 'nullable|boolean'
+            'is_active' => 'nullable|boolean',
+            'is_indexable' => 'nullable|boolean',
         ]);
+
+        $this->guardDuplicateDescription($validated['description'] ?? null);
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['name']);
@@ -102,6 +107,7 @@ class CrossChairController extends Controller
         }
 
         $validated['is_active'] = $request->has('is_active');
+        $validated['is_indexable'] = $request->has('is_indexable');
         $validated['order'] = $validated['order'] ?? 0;
 
         CrossChair::create($validated);
@@ -131,8 +137,11 @@ class CrossChairController extends Controller
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string',
             'meta_keywords' => 'nullable|string',
-            'is_active' => 'nullable|boolean'
+            'is_active' => 'nullable|boolean',
+            'is_indexable' => 'nullable|boolean',
         ]);
+
+        $this->guardDuplicateDescription($validated['description'] ?? null, (int) $id);
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['name']);
@@ -158,12 +167,22 @@ class CrossChairController extends Controller
         }
 
         $validated['is_active'] = $request->has('is_active');
+        $validated['is_indexable'] = $request->has('is_indexable');
         $validated['order'] = $validated['order'] ?? 0;
 
         $crosschair->update($validated);
 
         return redirect()->route('admin.CrossChair.index')
             ->with('success', 'CrossChair updated successfully!');
+    }
+
+    protected function guardDuplicateDescription(?string $description, ?int $exceptId = null): void
+    {
+        if (CrosshairDescriptionGuard::isDuplicateIntro($description, $exceptId)) {
+            throw ValidationException::withMessages([
+                'description' => 'This description opening matches another crosshair. Rewrite the first 1–2 sentences to be unique.',
+            ]);
+        }
     }
 
     public function destroy($id)

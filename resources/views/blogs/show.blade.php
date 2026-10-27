@@ -4,6 +4,22 @@
 @section('description', $blog->meta_description ?? Str::limit(strip_tags($blog->content), 150))
 @section('keywords', $blog->meta_keywords ?? '')
 
+@push('structured_data')
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'Article',
+    'headline' => $blog->meta_title ?? $blog->title,
+    'description' => $blog->meta_description ?? Str::limit(strip_tags($blog->content), 160),
+    'datePublished' => optional($blog->published_at ?? $blog->created_at)->toAtomString(),
+    'dateModified' => optional($blog->updated_at)->toAtomString(),
+    'author' => ['@type' => 'Organization', 'name' => 'Velocrosshairs'],
+    'publisher' => ['@type' => 'Organization', 'name' => 'Velocrosshairs', 'url' => config('app.url')],
+    'mainEntityOfPage' => url()->current(),
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endpush
+
 @section('content')
 <style>
     .blog-post-header {

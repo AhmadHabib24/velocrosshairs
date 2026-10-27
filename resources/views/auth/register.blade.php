@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('robots', 'noindex, follow')
+
 @section('content')
 <style>
 

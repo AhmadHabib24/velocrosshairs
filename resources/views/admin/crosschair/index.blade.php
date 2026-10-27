@@ -807,6 +807,14 @@
                         <label for="is_active_add" class="form-label" style="margin-bottom: 0;">Active</label>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" name="is_indexable" class="form-check-input" id="is_indexable_add" value="1">
+                        <label for="is_indexable_add" class="form-label" style="margin-bottom: 0;">Allow Google indexing</label>
+                    </div>
+                    <small class="form-text">Only enable for unique, high-quality descriptions.</small>
+                </div>
                 
                 <div style="display: flex; gap: 1rem; justify-content: flex-end;">
                     <button type="button" class="btn" onclick="closeAddModal()" style="background: var(--dark-bg); color: var(--text-secondary);">
@@ -914,6 +922,13 @@
                     <div class="form-check">
                         <input type="checkbox" name="is_active" class="form-check-input" id="is_active_edit" value="1">
                         <label for="is_active_edit" class="form-label" style="margin-bottom: 0;">Active</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" name="is_indexable" class="form-check-input" id="is_indexable_edit" value="1">
+                        <label for="is_indexable_edit" class="form-label" style="margin-bottom: 0;">Allow Google indexing</label>
                     </div>
                 </div>
                 
@@ -1070,6 +1085,7 @@
             document.getElementById('edit_meta_keywords').value = data.meta_keywords || '';
             document.getElementById('edit_order').value = data.order;
             document.getElementById('is_active_edit').checked = data.is_active;
+            document.getElementById('is_indexable_edit').checked = !!data.is_indexable;
             
             const metaTitleLength = (data.meta_title || '').length;
             const metaDescLength = (data.meta_description || '').length;

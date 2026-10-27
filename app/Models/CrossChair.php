@@ -22,6 +22,7 @@ class CrossChair extends Model
         'image',
         'order',
         'is_active',
+        'is_indexable',
         'status',
         'meta_title',
         'meta_description',
@@ -37,6 +38,7 @@ class CrossChair extends Model
      */
     protected $casts = [
         'is_active' => 'boolean',
+        'is_indexable' => 'boolean',
         'order' => 'integer',
         'views' => 'integer',
         'copies' => 'integer',

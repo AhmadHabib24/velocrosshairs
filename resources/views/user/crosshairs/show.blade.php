@@ -1,7 +1,24 @@
 @extends('layouts.app')
 
-@section('title', $crosshair->name . ' Code & Settings | Velocrosshairs')
-@section('description', 'Get the exact ' . $crosshair->name . ' code and settings. Copy the crosshair profile directly and preview it on different backgrounds.')
+@section('title', $crosshair->meta_title ?: ($crosshair->name . ' Code & Settings | Velocrosshairs'))
+@section('description', $crosshair->meta_description ?: ('Get the exact ' . $crosshair->name . ' Valorant crosshair code, preview settings, and copy the profile in one click.'))
+@if($crosshair->is_indexable === false)
+@section('robots', 'noindex, follow')
+@endif
+
+@push('structured_data')
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'BreadcrumbList',
+    'itemListElement' => [
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
+        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Crosshairs', 'item' => route('crosshairs.index')],
+        ['@type' => 'ListItem', 'position' => 3, 'name' => $crosshair->name, 'item' => url()->current()],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endpush
 
 @section('content')
 <div class="crosshair-details">
@@ -87,10 +104,6 @@
                             <i class="fas fa-copy"></i>
                             Copy Crosshair
                         </button>
-                        <button class="btn btn-outline favorite-btn">
-                            <i class="far fa-heart"></i>
-                            Add to Favorites
-                        </button>
                         <button class="btn btn-ghost share-btn">
                             <i class="fas fa-share-alt"></i>
                             Share
@@ -144,6 +157,45 @@
                 <div class="description-card">
                     <h3 class="card-title">Description</h3>
                     <p class="description-text">{{ $crosshair->description }}</p>
+                </div>
+                @endif
+
+                @if(!empty($crosshairBreakdown))
+                <div class="settings-card">
+                    <h3 class="card-title">Crosshair Breakdown</h3>
+                    <p class="description-text" style="margin-bottom: 1rem;">
+                        Parsed from this profile code — unique settings for {{ $crosshair->name }}.
+                    </p>
+                    <div class="settings-list">
+                        <div class="setting-item"><span class="setting-name">Style</span><span class="setting-value">{{ $crosshairBreakdown['style'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Color</span><span class="setting-value">{{ $crosshairBreakdown['color'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Center dot</span><span class="setting-value">{{ $crosshairBreakdown['center_dot'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Outline</span><span class="setting-value">{{ $crosshairBreakdown['outline'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Inner lines</span><span class="setting-value">{{ $crosshairBreakdown['inner_line_length'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Outer lines</span><span class="setting-value">{{ $crosshairBreakdown['outer_line_length'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Movement error</span><span class="setting-value">{{ $crosshairBreakdown['movement_error'] }}</span></div>
+                        <div class="setting-item"><span class="setting-name">Firing error</span><span class="setting-value">{{ $crosshairBreakdown['firing_error'] }}</span></div>
+                    </div>
+                    @if(!empty($crosshairBreakdown['tips']))
+                    <ul class="description-text" style="margin-top: 1rem; padding-left: 1.25rem;">
+                        @foreach($crosshairBreakdown['tips'] as $tip)
+                            <li style="margin-bottom: 0.35rem;">{{ $tip }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                @endif
+
+                @if(isset($relatedGuides) && $relatedGuides->count())
+                <div class="description-card">
+                    <h3 class="card-title">Guides &amp; Tips</h3>
+                    <ul class="description-text" style="padding-left: 1.25rem;">
+                        @foreach($relatedGuides as $guide)
+                            <li style="margin-bottom: 0.35rem;">
+                                <a href="{{ route('blogs.show', $guide->slug) }}" style="color: var(--primary-pink);">{{ $guide->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
                 @endif
 
@@ -1126,25 +1178,6 @@ const downloadBtn = document.querySelector('.download-btn');
 if (downloadBtn) {
     downloadBtn.addEventListener('click', function() {
         copyCrosshairWithTracking(this, this.getAttribute('data-crosshair-id'), 'Processing...');
-    });
-}
-
-// Favorite button
-const favoriteBtn = document.querySelector('.favorite-btn');
-if (favoriteBtn) {
-    favoriteBtn.addEventListener('click', function() {
-        const icon = this.querySelector('i');
-        if (icon.classList.contains('far')) {
-            icon.classList.remove('far'); icon.classList.add('fas');
-            this.style.background = 'var(--primary-pink)';
-            this.style.color = 'white';
-            this.style.borderColor = 'var(--primary-pink)';
-        } else {
-            icon.classList.remove('fas'); icon.classList.add('far');
-            this.style.background = '';
-            this.style.color = '';
-            this.style.borderColor = '';
-        }
     });
 }
 

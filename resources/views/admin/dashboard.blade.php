@@ -462,6 +462,30 @@
             <span>{{ number_format($stats['total_copies']) }} Copies</span>
         </div>
     </div>
+
+    <div class="stat-card">
+        <div class="stat-icon crosshairs">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="stat-label">Indexable Crosshairs</div>
+        <div class="stat-value">{{ $stats['indexable_crosschairs'] ?? 0 }}</div>
+        <div class="stat-change positive">
+            <i class="fas fa-check"></i>
+            <span>of {{ $stats['active_crosschairs'] }} active</span>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon views">
+            <i class="fas fa-newspaper"></i>
+        </div>
+        <div class="stat-label">Published Blogs</div>
+        <div class="stat-value">{{ $stats['published_blogs'] ?? 0 }}</div>
+        <div class="stat-change positive">
+            <i class="fas fa-book-open"></i>
+            <span>Editorial content</span>
+        </div>
+    </div>
 </div>
 
 <!-- SEO Spotlight - Top Ranking CrossChairs -->

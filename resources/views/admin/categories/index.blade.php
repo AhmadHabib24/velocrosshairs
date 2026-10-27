@@ -382,6 +382,11 @@
                     <label class="form-label">Description</label>
                     <textarea name="description" class="form-control"></textarea>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-label">Long Description (Category Hub Page)</label>
+                    <textarea name="long_description" class="form-control" rows="6" placeholder="400+ words unique intro for /crosshairs/category/..."></textarea>
+                </div>
                 
                 <div class="form-group">
                     <label class="form-label">Meta Title (SEO)</label>
@@ -460,6 +465,11 @@
                 <div class="form-group">
                     <label class="form-label">Description</label>
                     <textarea name="description" id="edit_description" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Long Description (Category Hub Page)</label>
+                    <textarea name="long_description" id="edit_long_description" class="form-control" rows="6"></textarea>
                 </div>
                 
                 <div class="form-group">
@@ -541,6 +551,7 @@
             document.getElementById('edit_name').value = data.name;
             document.getElementById('edit_slug').value = data.slug;
             document.getElementById('edit_description').value = data.description || '';
+            document.getElementById('edit_long_description').value = data.long_description || '';
             document.getElementById('edit_meta_title').value = data.meta_title || '';
             document.getElementById('edit_meta_description').value = data.meta_description || '';
             document.getElementById('edit_meta_keywords').value = data.meta_keywords || '';

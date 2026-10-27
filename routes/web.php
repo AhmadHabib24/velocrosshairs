@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\RobotsController;
 use App\Http\Controllers\BlogController;
 
 
@@ -30,6 +31,7 @@ Route::get('/storage-link', function () {
         return 'Error: ' . $e->getMessage();
     }
 })->name('storage.link');
+Route::get('/robots.txt', RobotsController::class);
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -51,6 +53,7 @@ Route::prefix('crosshairs')->group(function () {
 
     Route::get('/', [CrosshairController::class, 'index'])->name('crosshairs.index');
     Route::get('/categories', [CrosshairController::class, 'categories'])->name('crosshairs.categories');
+    Route::get('/category/{slug}', [CrosshairController::class, 'category'])->name('crosshairs.category');
     Route::get('/create', [CrosshairController::class, 'create'])->name('crosshairs.create');
     Route::post('/{id}/copy', [CrosshairController::class, 'copy'])->name('crosshairs.copy');
     Route::get('/{slug}', [CrosshairController::class, 'show'])->name('crosshairs.show');
@@ -77,7 +80,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Redirect old download route to crosshairs
-Route::redirect('/download', '/crosshairs', 301);
+Route::redirect('/download', '/crosshairs', 301)->name('download');
 
 Auth::routes();
 

@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
+@if(!empty($hubCategory))
+@section('title', ($hubCategory->meta_title ?: ($hubCategory->name . ' Valorant Crosshairs')) . ' | Velocrosshairs')
+@section('description', $hubCategory->meta_description ?: ('Browse ' . $hubCategory->name . ' Valorant crosshair codes with previews, copy-ready profiles, and setup tips.'))
+@else
 @section('title', 'Valorant Crosshairs Database: Best Pro & Community Codes')
 @section('description', 'Browse our complete Valorant crosshair database. Get the best crosshair codes used by pro players, discover popular styles, and copy them instantly to improve your aim.')
+@endif
+@if(!empty($robotsMeta))
+@section('robots', $robotsMeta)
+@endif
 
 @push('styles')
 <style>
@@ -373,11 +381,22 @@
 @section('content')
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">Browse <span class="text-gradient">Crosshairs</span></h1>
-            <p class="page-subtitle">
-                Discover thousands of professional crosshairs created by our gaming community.
-                Filter by category and style to find your perfect aim enhancement.
-            </p>
+            @if(!empty($hubCategory))
+                <h1 class="page-title">{{ $hubCategory->name }} <span class="text-gradient">Crosshairs</span></h1>
+                @if($hubCategory->long_description)
+                    <div class="page-subtitle" style="text-align:left; max-width: 820px; margin: 0 auto; line-height: 1.7;">
+                        {!! nl2br(e($hubCategory->long_description)) !!}
+                    </div>
+                @else
+                    <p class="page-subtitle">{{ $hubCategory->description ?? 'Browse curated Valorant crosshair codes in this category.' }}</p>
+                @endif
+            @else
+                <h1 class="page-title">Browse <span class="text-gradient">Crosshairs</span></h1>
+                <p class="page-subtitle">
+                    Discover thousands of professional crosshairs created by our gaming community.
+                    Filter by category and style to find your perfect aim enhancement.
+                </p>
+            @endif
         </div>
     </section>
     

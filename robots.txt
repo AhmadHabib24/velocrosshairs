@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Allow: /crosshairs
+Allow: /blogs
+Disallow: /login
+Disallow: /register
+Disallow: /admin
+Disallow: /user/
+Disallow: /password/
+Disallow: /*?*category=
+Disallow: /*?*sort=
+Disallow: /*?*search=
 
 Sitemap: https://velocrosshairs.com/sitemap.xml

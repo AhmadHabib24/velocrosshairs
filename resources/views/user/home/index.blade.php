@@ -3,6 +3,34 @@
 @section('title', 'Valorant Crosshair Codes & Settings | Velocrosshairs')
 @section('description', 'Find the best Valorant crosshairs, pro player codes, popular styles, and clean presets. Explore top crosshairs for aim, visibility, ranked play, and beginners.')
 
+@push('structured_data')
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'HowTo',
+    'name' => 'How to import a Valorant crosshair code',
+    'description' => 'Import a crosshair profile into Valorant using Velocrosshairs copy codes.',
+    'step' => [
+        ['@type' => 'HowToStep', 'position' => 1, 'name' => 'Copy the code', 'text' => 'Copy a crosshair profile code from Velocrosshairs.'],
+        ['@type' => 'HowToStep', 'position' => 2, 'name' => 'Open Valorant settings', 'text' => 'Go to Settings → Crosshair in Valorant.'],
+        ['@type' => 'HowToStep', 'position' => 3, 'name' => 'Import profile code', 'text' => 'Click Import Profile Code and paste the copied string.'],
+        ['@type' => 'HowToStep', 'position' => 4, 'name' => 'Save and test', 'text' => 'Apply the crosshair and test it in the Range or a match.'],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+<script type="application/ld+json">
+{!! json_encode([
+    '@context' => 'https://schema.org',
+    '@type' => 'FAQPage',
+    'mainEntity' => [
+        ['@type' => 'Question', 'name' => 'What is the best crosshair for Valorant?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'The best crosshair depends on visibility and comfort. Most players prefer minimal static crosshairs with bright colors.']],
+        ['@type' => 'Question', 'name' => 'How do I import a crosshair code in Valorant?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Copy the profile code, open Valorant Settings → Crosshair, choose Import Profile Code, paste, and apply.']],
+        ['@type' => 'Question', 'name' => 'Are Velocrosshairs codes safe to use?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. Crosshair profile codes only change in-game crosshair settings through Valorant\'s built-in import feature.']],
+    ],
+], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+</script>
+@endpush
+
 @push('styles')
 <style>
     /* Hero Section */

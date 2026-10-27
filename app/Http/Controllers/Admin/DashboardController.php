@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\CrossChair;
 use App\Models\Contact;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -33,6 +34,8 @@ class DashboardController extends Controller
             // Analytics
             'total_views' => CrossChair::sum('views'),
             'total_copies' => CrossChair::sum('copies'),
+            'indexable_crosschairs' => CrossChair::where('is_active', true)->where('is_indexable', true)->count(),
+            'published_blogs' => Blog::where('status', 'published')->count(),
         ];
         
         // Recent Users (last 5)

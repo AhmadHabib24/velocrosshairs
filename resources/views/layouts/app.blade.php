@@ -12,13 +12,9 @@
     <meta name="description"
         content="@yield('description', 'Download professional gaming crosshairs, create custom crosshair overlays, and improve your aim with our advanced crosshair technology.')">
     <meta name="keywords" content="@yield('keywords', 'gaming, crosshairs, valorant, overlays')">
-    @php
-        $canonicalUrl = url()->current();
-        if (request()->has('category')) {
-            $canonicalUrl .= '?category=' . request('category');
-        }
-    @endphp
-    <link rel="canonical" href="{{ $canonicalUrl }}" />
+    <meta name="robots" content="@yield('robots', 'index, follow')">
+    <link rel="canonical" href="@yield('canonical', \App\Support\CanonicalUrl::forRequest())" />
+    @stack('structured_data')
         <!-- Favicon (multi-size) -->
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('crosshairlogo.png?v=2') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('crosshairlogo.png?v=2') }}">
@@ -187,6 +183,28 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .vc-discord-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark-bg);
+            border: 1px solid var(--dark-border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .vc-discord-link:hover {
+            background: #5865F2;
+            border-color: #5865F2;
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         /* Dropdown */
@@ -522,7 +540,7 @@
                         <ul class="vc-dropdown-menu">
                             @foreach($navCategories as $category)
                                 <li>
-                                    <a href="{{ route('crosshairs.index', ['category' => $category->slug]) }}">
+                                    <a href="{{ route('crosshairs.category', $category->slug) }}">
                                         {{ $category->name }}
                                     </a>
                                 </li>
@@ -537,6 +555,11 @@
                     <a href="{{ route('blogs.index') }}" class="{{ request()->routeIs('blogs.*') ? 'active' : '' }}">Blog</a>
                 </li>
                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                <li class="vc-mobile-discord">
+                    <a href="https://discord.gg/wHZQyb5PZ" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                </li>
                 {{-- ✅ MOBILE AUTH LINKS INSIDE MENU --}}
                 <li class="vc-mobile-auth">
                     @auth
@@ -556,6 +579,9 @@
 
             <!-- Right: Auth buttons (Desktop only) -->
             <div class="vc-nav-auth">
+                <a href="https://discord.gg/wHZQyb5PZ" class="vc-discord-link" title="Join our Discord" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-discord"></i>
+                </a>
                 @auth
                     <a href="{{ Auth::user()->isAdmin() ? route('admin.dashboard') : route('user.dashboard') }}" class="btn btn-ghost" style="color: var(--primary-pink);">
                         <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
@@ -611,6 +637,10 @@
                     <a href="https://www.instagram.com/velocrosshairs/" class="footer-social" title="Instagram" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
+
+                    <a href="https://discord.gg/wHZQyb5PZ" class="footer-social" title="Discord" aria-label="Discord" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-discord"></i>
+                    </a>
                 
                     <a href="#" class="footer-social" title="TikTok" aria-label="TikTok">
                         <i class="fab fa-tiktok"></i>
@@ -631,7 +661,8 @@
                 <h3>Product</h3>
                 <ul>
                     <li><a href="{{ route('crosshairs.index') }}">Browse Crosshairs</a></li>
-                    <li><a href="{{ route('crosshairs.index') }}">Categories</a></li>
+                    <li><a href="{{ route('crosshairs.categories') }}">Categories</a></li>
+                    <li><a href="https://discord.gg/wHZQyb5PZ" target="_blank" rel="noopener noreferrer">Discord Community</a></li>
                 </ul>
             </div>
 

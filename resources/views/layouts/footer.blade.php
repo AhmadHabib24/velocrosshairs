@@ -18,7 +18,7 @@
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/wHZQyb5PZ" class="social-link" title="Discord" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
                         <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="#" class="social-link" title="Twitch"><i class="fab fa-twitch"></i></a>

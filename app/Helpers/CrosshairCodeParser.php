@@ -159,6 +159,57 @@ class CrosshairCodeParser
     }
 
     /**
+     * Human-readable breakdown for SEO / on-page utility.
+     */
+    public static function summarizeSettings(string $code): array
+    {
+        $params = self::parseCrosshairCode($code);
+        $color = self::getColor($params);
+
+        $innerLen = (float) ($params['0l'] ?? 0);
+        $outerLen = (float) ($params['1l'] ?? 0);
+        $showDot = ($params['d'] ?? '0') === '1';
+        $outline = ($params['o'] ?? '0') === '1';
+        $movementError = ($params['m'] ?? '0') === '1';
+        $firingError = ($params['f'] ?? '0') === '1';
+
+        $style = 'Classic cross';
+        if ($showDot && $innerLen <= 0 && $outerLen <= 0) {
+            $style = 'Center dot';
+        } elseif ($showDot && ($innerLen > 0 || $outerLen > 0)) {
+            $style = 'Dot with lines (hybrid)';
+        } elseif ($innerLen > 0 || $outerLen > 0) {
+            $style = 'Line crosshair';
+        }
+
+        $tips = [];
+        if ($movementError) {
+            $tips[] = 'Movement error lines help track strafing targets.';
+        }
+        if ($showDot) {
+            $tips[] = 'Center dot improves precision for long-range taps.';
+        }
+        if ($innerLen > 0 && $innerLen <= 4) {
+            $tips[] = 'Short inner lines keep the center clear for head-level aim.';
+        }
+        if (empty($tips)) {
+            $tips[] = 'Static crosshair suited for consistent flicks and tracking.';
+        }
+
+        return [
+            'style' => $style,
+            'color' => $color,
+            'center_dot' => $showDot ? 'Enabled' : 'Disabled',
+            'outline' => $outline ? 'Enabled' : 'Disabled',
+            'inner_line_length' => $innerLen > 0 ? $innerLen : 'Off',
+            'outer_line_length' => $outerLen > 0 ? $outerLen : 'Off',
+            'movement_error' => $movementError ? 'On' : 'Off',
+            'firing_error' => $firingError ? 'On' : 'Off',
+            'tips' => $tips,
+        ];
+    }
+
+    /**
      * Default fallback SVG
      */
     private static function generateDefaultSVG($size)

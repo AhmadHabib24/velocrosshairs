@@ -35,7 +35,7 @@ class CanonicalUrl
             return $base . '/blogs';
         }
 
-        if ($request->is('/') && $request->query->hasAny(['category', 'sort', 'search'])) {
+        if ($request->is('/') && $request->hasAny(['category', 'sort', 'search'])) {
             return $base . '/';
         }
 

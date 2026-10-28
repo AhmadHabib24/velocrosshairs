@@ -106,6 +106,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->name('admin.')->group(fun
     Route::post('/emails/read-all', [App\Http\Controllers\Admin\EmailLogController::class, 'readAll'])->name('emails.readAll');
 
     // User Management Routes
+    Route::get('/users/export/csv', [UserController::class, 'exportCsv'])->name('users.export.csv');
+    Route::get('/users/export/xls', [UserController::class, 'exportXls'])->name('users.export.xls');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');

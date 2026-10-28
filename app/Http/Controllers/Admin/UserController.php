@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class UserController extends Controller
 {
@@ -17,6 +18,56 @@ class UserController extends Controller
     {
         $users = User::latest()->paginate(15);
         return view('admin.users.index', compact('users'));
+    }
+
+    public function exportCsv(): StreamedResponse
+    {
+        $filename = 'users-' . now()->format('Y-m-d-His') . '.csv';
+
+        return response()->streamDownload(function () {
+            $handle = fopen('php://output', 'w');
+            fprintf($handle, chr(0xEF) . chr(0xBB) . chr(0xBF));
+            fputcsv($handle, ['ID', 'Name', 'Email', 'Role', 'Status', 'Joined']);
+
+            User::query()->orderBy('id')->chunk(200, function ($users) use ($handle) {
+                foreach ($users as $user) {
+                    fputcsv($handle, $this->exportRow($user));
+                }
+            });
+
+            fclose($handle);
+        }, $filename, [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+        ]);
+    }
+
+    public function exportXls()
+    {
+        $filename = 'users-' . now()->format('Y-m-d-His') . '.xls';
+        $users = User::query()->orderBy('id')->get();
+
+        $html = view('admin.users.export-table', compact('users'))->render();
+
+        return response($html, 200, [
+            'Content-Type' => 'application/vnd.ms-excel; charset=UTF-8',
+            'Content-Disposition' => 'attachment; filename="' . $filename . '"',
+            'Cache-Control' => 'max-age=0',
+        ]);
+    }
+
+    /**
+     * @return array<int, string|int>
+     */
+    private function exportRow(User $user): array
+    {
+        return [
+            $user->id,
+            $user->name,
+            $user->email,
+            ucfirst($user->role),
+            $user->is_active ? 'Active' : 'Inactive',
+            $user->created_at?->format('Y-m-d H:i:s') ?? '',
+        ];
     }
 
     /**

@@ -47,6 +47,13 @@
         font-size: 1.1rem;
         font-weight: 600;
     }
+
+    .header-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+    }
     
     /* Button */
     .btn {
@@ -307,10 +314,20 @@
 <div class="content-card">
     <div class="content-card-header">
         <h2 class="content-card-title">All Users</h2>
-        <button class="btn btn-primary" onclick="openAddModal()">
-            <i class="fas fa-plus"></i>
-            Add User
-        </button>
+        <div class="header-actions">
+            <a href="{{ route('admin.users.export.csv') }}" class="btn btn-info">
+                <i class="fas fa-file-csv"></i>
+                Export CSV
+            </a>
+            <a href="{{ route('admin.users.export.xls') }}" class="btn btn-success">
+                <i class="fas fa-file-excel"></i>
+                Export XLS
+            </a>
+            <button class="btn btn-primary" onclick="openAddModal()">
+                <i class="fas fa-plus"></i>
+                Add User
+            </button>
+        </div>
     </div>
     
     <div class="table-responsive">

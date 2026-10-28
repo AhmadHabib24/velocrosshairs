@@ -185,28 +185,6 @@
             gap: 1rem;
         }
 
-        .vc-discord-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--dark-bg);
-            border: 1px solid var(--dark-border);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .vc-discord-link:hover {
-            background: #5865F2;
-            border-color: #5865F2;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
         /* Dropdown */
         .vc-nav-links li { position: relative; }
 
@@ -579,9 +557,6 @@
 
             <!-- Right: Auth buttons (Desktop only) -->
             <div class="vc-nav-auth">
-                <a href="https://discord.gg/wHZQyb5PZ" class="vc-discord-link" title="Join our Discord" aria-label="Discord" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-discord"></i>
-                </a>
                 @auth
                     <a href="{{ Auth::user()->isAdmin() ? route('admin.dashboard') : route('user.dashboard') }}" class="btn btn-ghost" style="color: var(--primary-pink);">
                         <i class="fas fa-tachometer-alt mr-2"></i> Dashboard

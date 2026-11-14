@@ -16,10 +16,17 @@ class CrossChairController extends Controller
     {
         $categoryId = $request->input('category_id');
         $search = trim((string) $request->input('search', ''));
+        $indexing = $request->input('indexing', '');
 
-        $applyFilters = function ($query) use ($categoryId, $search) {
+        $applyFilters = function ($query) use ($categoryId, $search, $indexing) {
             if ($categoryId) {
                 $query->where('category_id', $categoryId);
+            }
+
+            if ($indexing === '1') {
+                $query->where('is_indexable', true);
+            } elseif ($indexing === '0') {
+                $query->where('is_indexable', false);
             }
 
             if ($search !== '') {
@@ -60,7 +67,8 @@ class CrossChairController extends Controller
             'inactiveCrosschairs',
             'categories',
             'categoryId',
-            'search'
+            'search',
+            'indexing'
         ));
     }
 

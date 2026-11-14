@@ -497,6 +497,15 @@
             </select>
         </div>
 
+        <div class="filter-group">
+            <label class="filter-label" for="indexing">Indexing</label>
+            <select name="indexing" id="indexing" class="form-control" onchange="this.form.submit()">
+                <option value="" {{ ($indexing ?? '') === '' ? 'selected' : '' }}>All</option>
+                <option value="1" {{ ($indexing ?? '') === '1' ? 'selected' : '' }}>Indexed (Google)</option>
+                <option value="0" {{ ($indexing ?? '') === '0' ? 'selected' : '' }}>Not indexed</option>
+            </select>
+        </div>
+
         <div class="filter-group search-group">
             <label class="filter-label" for="search">Search</label>
             <input type="text"
@@ -509,8 +518,8 @@
         </div>
 
         <div class="filter-actions">
-            @if(($categoryId ?? '') || ($search ?? ''))
-                <a href="{{ route('admin.CrossChair.index') }}" class="btn" style="background: var(--dark-bg); color: var(--text-secondary);">
+            @if(($categoryId ?? '') || ($search ?? '') || ($indexing ?? '') !== '')
+                <a href="{{ route('admin.CrossChair.index', ['tab' => request('tab', 'active')]) }}" class="btn" style="background: var(--dark-bg); color: var(--text-secondary);">
                     <i class="fas fa-times"></i>
                     Clear
                 </a>

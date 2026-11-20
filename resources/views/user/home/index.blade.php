@@ -1,20 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'Valorant Crosshair Codes & Settings | Velocrosshairs')
-@section('description', 'Find the best Valorant crosshairs, pro player codes, popular styles, and clean presets. Explore top crosshairs for aim, visibility, ranked play, and beginners.')
+@section('title', 'Valorant Crosshairs: Copy Crosshair Codes in Seconds | Velocrosshairs')
+@section('description', 'Pick any crosshair Valorant players love, copy its code, and paste it into the game. Browse the best Valorant crosshairs, pro styles, and one-click import codes.')
 
 @push('structured_data')
 <script type="application/ld+json">
 {!! json_encode([
     '@context' => 'https://schema.org',
     '@type' => 'HowTo',
-    'name' => 'How to import a Valorant crosshair code',
-    'description' => 'Import a crosshair profile into Valorant using Velocrosshairs copy codes.',
+    'name' => 'How to copy crosshair in Valorant',
+    'description' => 'Copy a Valorant crosshair code from Velocrosshairs and import it into the game in about a minute.',
     'step' => [
-        ['@type' => 'HowToStep', 'position' => 1, 'name' => 'Copy the code', 'text' => 'Copy a crosshair profile code from Velocrosshairs.'],
-        ['@type' => 'HowToStep', 'position' => 2, 'name' => 'Open Valorant settings', 'text' => 'Go to Settings → Crosshair in Valorant.'],
-        ['@type' => 'HowToStep', 'position' => 3, 'name' => 'Import profile code', 'text' => 'Click Import Profile Code and paste the copied string.'],
-        ['@type' => 'HowToStep', 'position' => 4, 'name' => 'Save and test', 'text' => 'Apply the crosshair and test it in the Range or a match.'],
+        ['@type' => 'HowToStep', 'position' => 1, 'name' => 'Copy the Code', 'text' => 'Open any crosshair in our list and press the Copy Code button.'],
+        ['@type' => 'HowToStep', 'position' => 2, 'name' => 'Open Settings', 'text' => 'Launch Valorant, open Settings, and go to the Crosshair tab.'],
+        ['@type' => 'HowToStep', 'position' => 3, 'name' => 'Import the Code', 'text' => 'Click Import Profile Code and paste your copied code into the box.'],
+        ['@type' => 'HowToStep', 'position' => 4, 'name' => 'Test and Play', 'text' => 'Check the crosshair in the Range, tweak if needed, then jump into a match.'],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>
@@ -23,9 +23,12 @@
     '@context' => 'https://schema.org',
     '@type' => 'FAQPage',
     'mainEntity' => [
-        ['@type' => 'Question', 'name' => 'What is the best crosshair for Valorant?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'The best crosshair depends on visibility and comfort. Most players prefer minimal static crosshairs with bright colors.']],
-        ['@type' => 'Question', 'name' => 'How do I import a crosshair code in Valorant?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Copy the profile code, open Valorant Settings → Crosshair, choose Import Profile Code, paste, and apply.']],
-        ['@type' => 'Question', 'name' => 'Are Velocrosshairs codes safe to use?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. Crosshair profile codes only change in-game crosshair settings through Valorant\'s built-in import feature.']],
+        ['@type' => 'Question', 'name' => 'What is the best crosshair in Valorant?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'There is no single best crosshair. The best one is clear on every map and fits your aim style—start with a small dot or simple cross and adjust.']],
+        ['@type' => 'Question', 'name' => 'What are funny Valorant crosshairs?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Funny Valorant crosshairs include hearts, flowers, glasses, and other shapes for casual matches—not built for serious ranked play.']],
+        ['@type' => 'Question', 'name' => 'Does crosshair size matter?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. A small crosshair covers less of your target for precise shots; a big crosshair is easier to spot in a fight. Try medium first.']],
+        ['@type' => 'Question', 'name' => 'Can I use a custom crosshair?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Yes. Build your own in Settings, then copy its code and share it.']],
+        ['@type' => 'Question', 'name' => 'Is a dot crosshair better than lines?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'A dot gives one clean point for headshots; lines help judge distance and spray. Try both and keep what you hit with most.']],
+        ['@type' => 'Question', 'name' => 'Why is my crosshair not showing properly?', 'acceptedAnswer' => ['@type' => 'Answer', 'text' => 'Check the active profile, center dot, line length, outline, and screen resolution if lines look thin or stretched.']],
     ],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
 </script>
@@ -769,8 +772,19 @@
 
 @section('content')
 
-    <!-- SEO H1 Tag -->
-    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Valorant Crosshair Codes</h1>
+    <!-- Intro -->
+    <section class="content-section" style="padding: 4rem 0 2rem;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h1 class="section-title" style="font-size: clamp(1.75rem, 4vw, 2.75rem);">
+                    Valorant Crosshairs: Copy <span class="text-gradient">Valorant Crosshair Codes</span> in Seconds
+                </h1>
+                <p class="section-subtitle" style="max-width: 720px;">
+                    Pick any crosshair Valorant players love, copy its code, and paste it into the game. Looking for a val crosshair that fits your aim? Browse every crosshair and test it in the Range.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Popular Crosshairs Showcase -->
     <section class="showcase">
@@ -778,7 +792,7 @@
             <div class="section-header fade-in">
                 <h2 class="section-title">Popular <span class="text-gradient">Crosshairs</span></h2>
                 <p class="section-subtitle">
-                    Discover the most downloaded crosshairs from our community of professional gamers.
+                    Popular val crosshair codes players copy every day—preview, copy, and try them in the Range.
                 </p>
             </div>
 
@@ -866,9 +880,9 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What Makes a Good <span class="text-gradient">Valorant Crosshair?</span></h2>
+                <h2 class="section-title">Best Valorant Crosshairs: <span class="text-gradient">Styles That Work</span></h2>
                 <p class="section-subtitle">
-                    A good crosshair gives you clarity, stability, and confidence in every fight. Players choose different styles based on visibility, aim preference, and comfort.
+                    The best crosshair Valorant has to offer is the one you can read in every fight. Pick your best val crosshair by clarity, aim style, and comfort. These six styles are good crosshairs for Valorant to start with.
                 </p>
             </div>
 
@@ -877,40 +891,40 @@
                     <div class="feature-icon">
                         <i class="fas fa-dot-circle"></i>
                     </div>
-                    <h3 class="feature-title">Minimal Crosshairs</h3>
-                    <p class="feature-description">Clean, distraction-free designs that help you focus on headshots and precision aiming.</p>
+                    <h3 class="feature-title">Minimal Beginner Crosshair</h3>
+                    <p class="feature-description">A small, clean crosshair keeps the screen clear so you can focus on headshots. It is the easiest style for a new player to learn.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-circle"></i>
                     </div>
-                    <h3 class="feature-title">Dot-Only Crosshairs</h3>
-                    <p class="feature-description">Perfect for pixel-perfect accuracy and one-tap headshot consistency.</p>
+                    <h3 class="feature-title">Dot Crosshair Valorant</h3>
+                    <p class="feature-description">A Valorant dot crosshair gives you one exact point to aim at, which suits one-tap headshots. Go small for precision or big to track targets.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-circle-notch"></i>
                     </div>
-                    <h3 class="feature-title">Circle Crosshairs</h3>
-                    <p class="feature-description">Excellent for spray control and understanding bullet spread patterns.</p>
+                    <h3 class="feature-title">Circle Crosshair Valorant</h3>
+                    <p class="feature-description">A circle crosshair gives you a ring to aim inside, which many players like for spray control. Diamond and square shapes offer a similar look.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-plus"></i>
                     </div>
-                    <h3 class="feature-title">Classic Four-Line</h3>
-                    <p class="feature-description">Traditional style with balanced visibility for all ranges and situations.</p>
+                    <h3 class="feature-title">Classic Four-Line Crosshair</h3>
+                    <p class="feature-description">The classic cross uses four short lines with a gap in the middle. It stays easy to see up close and at long range.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3 class="feature-title">Static Crosshairs</h3>
-                    <p class="feature-description">No movement or firing error for consistent muscle memory and competitive play.</p>
+                    <h3 class="feature-title">Static Crosshair for Valorant</h3>
+                    <p class="feature-description">A static crosshair keeps the same size when you move or fire. Unlike a Valorant crosshair that changes when you move, it builds steady muscle memory.</p>
                 </div>
 
                 <div class="feature-card">
@@ -918,7 +932,7 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3 class="feature-title">Pro Crosshairs</h3>
-                    <p class="feature-description">Exact settings from professional players and top-tier ranked competitors.</p>
+                    <p class="feature-description">Want a setup built from a pro or top-ranked player’s settings? Copy one of these and tweak it until it feels right.</p>
                 </div>
             </div>
         </div>
@@ -983,9 +997,9 @@
         <div class="container">
             <div class="import-container">
                 <div class="import-header">
-                    <h2 class="section-title">How to Import <span class="text-gradient">Crosshair Codes</span></h2>
+                    <h2 class="section-title">How to Copy Crosshair <span class="text-gradient">in Valorant</span></h2>
                     <p class="section-subtitle">
-                        Importing a crosshair takes just seconds. Follow these simple steps to get started.
+                        It takes about a minute to get a crosshair into your game. Copy one of our val crosshair codes, then use our step-by-step guide if you get stuck.
                     </p>
                 </div>
 
@@ -994,31 +1008,31 @@
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3>Copy the Code</h3>
-                            <p>Click the "Copy Code" button on any crosshair you like from our database.</p>
+                            <p>Open any crosshair in our list and press the Copy Code button. It is a quick copy and paste, so the whole code lands on your clipboard in one click.</p>
                         </div>
                     </div>
 
                     <div class="import-step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Open Valorant Settings</h3>
-                            <p>Launch Valorant and navigate to Settings → Crosshair settings menu.</p>
+                            <h3>Open Settings</h3>
+                            <p>To change your crosshair in Valorant, launch the game and open Settings. Then go to the Crosshair tab, where all your reticle options live.</p>
                         </div>
                     </div>
 
                     <div class="import-step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Import Profile Code</h3>
-                            <p>Click "Import Profile Code" and paste the copied code into the text box.</p>
+                            <h3>Import the Code</h3>
+                            <p>Click Import Profile Code and paste your copied code into the box. Confirm it, and the new crosshair loads right away.</p>
                         </div>
                     </div>
 
                     <div class="import-step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Save and Play</h3>
-                            <p>Your new crosshair appears instantly. Test it in the Range or jump into a match!</p>
+                            <h3>Test and Play</h3>
+                            <p>Your crosshair is ready once the import finishes. Check it in the Range, tweak the size if you like, then jump into a match.</p>
                         </div>
                     </div>
                 </div>
@@ -1036,9 +1050,9 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <h2 class="section-title">Valorant Crosshair <span class="text-gradient">FAQs</span></h2>
                 <p class="section-subtitle">
-                    Find answers to the most common questions about Valorant crosshairs.
+                    Quick answers to what players ask most, from crosshair codes Valorant players copy to fixing a crosshair that looks wrong.
                 </p>
             </div>
 
@@ -1046,60 +1060,60 @@
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>What is the best crosshair for Valorant?</h3>
+                        <h3>What Is the Best Crosshair in Valorant?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>The best crosshair depends on visibility and comfort. Most players prefer minimal, static crosshairs with bright colors. Dot crosshairs and classic four-line crosshairs are the most popular among competitive players.</p>
+                        <p>There is no single best crosshair in Valorant. The best one is the one you can see clearly on every map and that fits your aim style. Start with a small dot or a simple cross and adjust from there.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>What crosshair do pro players use?</h3>
+                        <h3>What Are Funny Valorant Crosshairs?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Pro players use clean, minimal setups with short inner lines, no outer lines, and bright colors like cyan or green. You can find every Valorant pro crosshair in our database with ready-to-import codes.</p>
+                        <p>Funny Valorant crosshairs are hearts, flowers, glasses, and other odd shapes. Players use these troll crosshairs in casual matches for laughs, since they are not built for serious ranked play. Browse the Fun category on our <a href="{{ route('crosshairs.index') }}">crosshair list</a> to find cute and troll picks.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>How do I copy Valorant crosshair codes?</h3>
+                        <h3>Does Crosshair Size Matter?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Click the "Copy Code" button on any crosshair page, open Valorant, go to Settings → Crosshair, select "Import Profile Code," and paste the code into the text box.</p>
+                        <p>Yes, it can. A small crosshair covers less of your target, which helps with precise shots. A big crosshair in Valorant is easier to spot in a fight, so try a medium size first and adjust the line length from there.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>What color crosshair is easiest to see?</h3>
+                        <h3>Can I Use a Custom Crosshair?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Cyan, green, and yellow are the highest-visibility colors for most maps. These colors provide excellent contrast against both dark and light backgrounds.</p>
+                        <p>Yes. Valorant lets you build your own custom crosshair in Settings, from the center dot to the line length and color. Once you like it, you can copy its code and share it.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>Should I use a dot or lines crosshair?</h3>
+                        <h3>Is a Dot Crosshair Better Than Lines?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Dots help with precision and headshot accuracy, while lines help with general tracking and spray control. Many competitive players use hybrid crosshairs that combine both elements.</p>
+                        <p>A dot gives you one clean point and keeps the screen clear, which suits headshot-focused aim. Lines help you judge distance and spray. Try both and keep the one you hit with most.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
-                        <h3>Why is my crosshair not showing properly?</h3>
+                        <h3>Why Is My Crosshair Not Showing Properly?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>You may have movement or firing error enabled, ADS override active, or a color that blends into the map. Try resetting your crosshair settings or adjusting the color for better visibility.</p>
+                        <p>First, check that you picked the right profile in your Crosshair settings. Then look at the center dot, line length, and outline, since thin lines can be hard to see on bright maps. If it looks stretched or blurry, check your screen resolution setting too.</p>
                     </div>
                 </div>
             </div>
@@ -1111,53 +1125,56 @@
         <div class="container">
             <div class="why-us-content">
                 <div class="why-us-header">
-                    <h2 class="section-title">Why <span class="text-gradient">Velocrosshairs?</span></h2>
+                    <h2 class="section-title">Our Valorant Crosshair <span class="text-gradient">Database</span></h2>
                     <p class="section-subtitle">
-                        We're the most trusted source for Valorant crosshairs, codes, and pro settings.
+                        Every one of our Valorant crosshairs comes with a code, a preview, and a category, so the Valorant crosshair data you need is easy to find. Browse, copy, and play.
                     </p>
                 </div>
 
                 <div class="why-us-grid">
                     <div class="why-us-item">
                         <i class="fas fa-database"></i>
-                        <h3>Massive Crosshair Database</h3>
-                        <p>Thousands of verified crosshairs from pros, streamers, and the community.</p>
+                        <h3>Big Library</h3>
+                        <p>Browse crosshairs for every style, from tiny dots to circles and fun shapes. It all sits in one place, so you do not have to hunt around.</p>
                     </div>
 
                     <div class="why-us-item">
-                        <i class="fas fa-sync-alt"></i>
-                        <h3>Daily Updates</h3>
-                        <p>Pro crosshairs and trending designs updated every day to keep you current.</p>
+                        <i class="fas fa-copy"></i>
+                        <h3>One-Click Copy</h3>
+                        <p>Every crosshair has a Copy Code button. Press it, paste the code into Valorant, and you are ready to go.</p>
                     </div>
 
                     <div class="why-us-item">
-                        <i class="fas fa-check-double"></i>
-                        <h3>Verified Codes</h3>
-                        <p>Every crosshair code is tested and verified to work perfectly in-game.</p>
+                        <i class="fas fa-file-import"></i>
+                        <h3>Ready-to-Import Codes</h3>
+                        <p>Each code is ready to paste into the game’s import box. Pick one from the complete list of codes and try it.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-eye"></i>
                         <h3>Clean Previews</h3>
-                        <p>High-quality previews on multiple backgrounds for accurate visibility testing.</p>
+                        <p>Spot the coolest Valorant crosshairs at a glance. Each one has a preview, so you can judge its size and shape before you copy the code.</p>
                     </div>
 
                     <div class="why-us-item">
                         <i class="fas fa-filter"></i>
-                        <h3>Advanced Filtering</h3>
-                        <p>Sort by style, color, visibility, purpose, and pro player for easy searching.</p>
+                        <h3>Browse by Category</h3>
+                        <p>Crosshairs are sorted into Teams, Other, and Fun. Open Fun for cute and troll crosshairs, or Other for the rest of the list.</p>
                     </div>
 
                     <div class="why-us-item">
-                        <i class="fas fa-users"></i>
-                        <h3>Community Driven</h3>
-                        <p>Submit your own crosshairs and discover unique designs from other players.</p>
+                        <i class="fab fa-discord"></i>
+                        <h3>Discord Community</h3>
+                        <p>Join our <a href="https://discord.gg/wHZQyb5PZ" target="_blank" rel="noopener noreferrer">Discord</a> to talk crosshairs with other players. Share what works for you and see what others are using.</p>
                     </div>
                 </div>
 
                 <div class="why-us-cta">
                     <a href="{{ route('crosshairs.index') }}" class="btn btn-primary btn-lg">
-                        <i class="fas fa-rocket"></i> Start Exploring Now
+                        <i class="fas fa-th"></i> Browse All Crosshairs
+                    </a>
+                    <a href="https://discord.gg/wHZQyb5PZ" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer" style="margin-left: 0.75rem;">
+                        <i class="fab fa-discord"></i> Join Discord
                     </a>
                 </div>
             </div>

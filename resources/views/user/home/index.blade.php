@@ -767,10 +767,29 @@
             text-align: center;
         }
     }
+
+    .home-inline-link {
+        color: var(--primary-pink);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .home-inline-link:hover {
+        color: #ff6b7a;
+    }
+
 </style>
 @endpush
 
 @section('content')
+
+    @php
+        $homeCrosshairs = route('crosshairs.index');
+        $homeBlog = static fn (string $slug): string => route('blogs.show', $slug);
+        $homeCategory = static fn (string $slug): string => route('crosshairs.category', $slug);
+    @endphp
 
     <!-- Intro -->
     <section class="content-section" style="padding: 4rem 0 2rem;">
@@ -780,7 +799,9 @@
                     Valorant Crosshairs: Copy <span class="text-gradient">Valorant Crosshair Codes</span> in Seconds
                 </h1>
                 <p class="section-subtitle" style="max-width: 720px;">
-                    Pick any crosshair Valorant players love, copy its code, and paste it into the game. Looking for a val crosshair that fits your aim? Browse every crosshair and test it in the Range.
+                    Pick any crosshair Valorant players love, copy its code, and paste it into the game. Looking for a val crosshair that fits your aim?
+                    <a href="{{ $homeCrosshairs }}" class="home-inline-link">Browse every crosshair</a>
+                    and test it in the Range.
                 </p>
             </div>
         </div>
@@ -789,13 +810,6 @@
     <!-- Popular Crosshairs Showcase -->
     <section class="showcase">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Popular <span class="text-gradient">Crosshairs</span></h2>
-                <p class="section-subtitle">
-                    Popular val crosshair codes players copy every day—preview, copy, and try them in the Range.
-                </p>
-            </div>
-
             @if($popularCrosshairs && $popularCrosshairs->count() > 0)
                 <div class="showcase-grid">
                     @foreach($popularCrosshairs as $crosshair)
@@ -882,7 +896,9 @@
             <div class="section-header">
                 <h2 class="section-title">Best Valorant Crosshairs: <span class="text-gradient">Styles That Work</span></h2>
                 <p class="section-subtitle">
-                    The best crosshair Valorant has to offer is the one you can read in every fight. Pick your best val crosshair by clarity, aim style, and comfort. These six styles are good crosshairs for Valorant to start with.
+                    The best crosshair Valorant has to offer is the one you can read in every fight. Pick your best val crosshair by clarity, aim style, and comfort—these six styles are good crosshairs for Valorant to start with. For presets and import tips, see our
+                    <a href="{{ $homeBlog('best-valorant-crosshair-settings') }}" class="home-inline-link">best Valorant crosshair settings</a>
+                    guide.
                 </p>
             </div>
 
@@ -900,7 +916,9 @@
                         <i class="fas fa-circle"></i>
                     </div>
                     <h3 class="feature-title">Dot Crosshair Valorant</h3>
-                    <p class="feature-description">A Valorant dot crosshair gives you one exact point to aim at, which suits one-tap headshots. Go small for precision or big to track targets.</p>
+                    <p class="feature-description">A Valorant dot crosshair gives you one exact point to aim at, which suits one-tap headshots. Go small for precision or big to track targets. Explore our
+                        <a href="{{ $homeBlog('dot-crosshair-valorant') }}" class="home-inline-link">dot crosshair Valorant</a>
+                        guide for copy-ready codes.</p>
                 </div>
 
                 <div class="feature-card">
@@ -932,7 +950,9 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3 class="feature-title">Pro Crosshairs</h3>
-                    <p class="feature-description">Want a setup built from a pro or top-ranked player’s settings? Copy one of these and tweak it until it feels right.</p>
+                    <p class="feature-description">Want a setup built from a pro or top-ranked player’s settings? Copy one like the
+                        <a href="{{ $homeBlog('aspas-crosshair-code') }}" class="home-inline-link">Aspas crosshair code</a>
+                        and tweak it until it feels right.</p>
                 </div>
             </div>
         </div>
@@ -944,7 +964,9 @@
             <div class="section-header">
                 <h2 class="section-title">Crosshair <span class="text-gradient">Colors</span> That Matter</h2>
                 <p class="section-subtitle">
-                    Color choice is one of the biggest crosshair advantages. Choose the right color for maximum visibility and performance.
+                    Color choice is one of the biggest crosshair advantages. See our
+                    <a href="{{ $homeBlog('valorant-crosshair-colors') }}" class="home-inline-link">Valorant crosshair colors guide</a>
+                    and pick the right color for maximum visibility and performance.
                 </p>
             </div>
 
@@ -999,7 +1021,7 @@
                 <div class="import-header">
                     <h2 class="section-title">How to Copy Crosshair <span class="text-gradient">in Valorant</span></h2>
                     <p class="section-subtitle">
-                        It takes about a minute to get a crosshair into your game. Copy one of our val crosshair codes, then use our step-by-step guide if you get stuck.
+                        It takes about a minute to get a crosshair into your game. Copy one of our val crosshair codes, then use our step-by-step guide below if you get stuck.
                     </p>
                 </div>
 
@@ -1073,7 +1095,7 @@
                         <h3>What Are Funny Valorant Crosshairs?</h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Funny Valorant crosshairs are hearts, flowers, glasses, and other odd shapes. Players use these troll crosshairs in casual matches for laughs, since they are not built for serious ranked play. Browse the Fun category on our <a href="{{ route('crosshairs.index') }}">crosshair list</a> to find cute and troll picks.</p>
+                        <p>Funny Valorant crosshairs are hearts, flowers, glasses, and other odd shapes. Players use these troll crosshairs in casual matches for laughs, since they are not built for serious ranked play. Browse the Fun category on our list to find cute and troll picks.</p>
                     </div>
                 </div>
 
@@ -1147,7 +1169,9 @@
                     <div class="why-us-item">
                         <i class="fas fa-file-import"></i>
                         <h3>Ready-to-Import Codes</h3>
-                        <p>Each code is ready to paste into the game’s import box. Pick one from the complete list of codes and try it.</p>
+                        <p>Each code is ready to paste into the game’s import box. Pick one from our
+                            <a href="{{ $homeBlog('valorant-crosshair-codes') }}" class="home-inline-link">Valorant crosshair codes</a>
+                            article and try it.</p>
                     </div>
 
                     <div class="why-us-item">
@@ -1159,7 +1183,11 @@
                     <div class="why-us-item">
                         <i class="fas fa-filter"></i>
                         <h3>Browse by Category</h3>
-                        <p>Crosshairs are sorted into Teams, Other, and Fun. Open Fun for cute and troll crosshairs, or Other for the rest of the list.</p>
+                        <p>Crosshairs are sorted into
+                            <a href="{{ $homeCategory('Teams') }}" class="home-inline-link">Teams</a>,
+                            <a href="{{ $homeCategory('other') }}" class="home-inline-link">Other</a>, and
+                            <a href="{{ $homeCategory('fun') }}" class="home-inline-link">Fun</a>.
+                            Open Fun for cute and troll crosshairs, or Other for the rest of the list.</p>
                     </div>
 
                     <div class="why-us-item">
